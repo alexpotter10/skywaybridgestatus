@@ -15,7 +15,9 @@ This data is also used on the SkywayBridgeStatus.com website to provide near rea
 
 ## Steps to Configure Project
 
-1. Copy `config_template.php` and rename to `config.php`
-2. Add in the required parameters (e.g. MySQL database and Weather Underground API key)
+1. Setup MySQL database and import schema
+2. Copy `config_template.php` and rename to `config.php`
+3. Add in the required parameters (e.g. MySQL database and Weather Underground API key)
+4. Execute using PHP CLI in the command line
 
 That's it, you're ready to roll!
