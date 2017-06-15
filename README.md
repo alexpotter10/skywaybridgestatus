@@ -12,3 +12,10 @@ This data is also used on the SkywayBridgeStatus.com website to provide near rea
 3. Posts of status changes to Twitter feed (@SkywayStatus)
 4. Improvements to data collection procedures
 5. Optimization of data storage and delivery
+
+## Steps to Configure Project
+
+1. Copy `config_template.php` and rename to `config.php`
+2. Add in the required parameters (e.g. MySQL database and Weather Underground API key)
+
+That's it, you're ready to roll!
