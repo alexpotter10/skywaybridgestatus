@@ -17,6 +17,7 @@ catch(PDOException $e) {
 
 // Loop through desired query locations
 foreach ($weather_locations as $weather_location) {
+    $weather_locations_id = $weather_location["id"];
     $city = $weather_location["city"];
     $state = $weather_location["state"];
 
@@ -59,10 +60,11 @@ foreach ($weather_locations as $weather_location) {
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
         // Prepare SQL and bind parameters
-        $stmt = $conn->prepare("INSERT INTO weather_log (request_datetime, city, station_id, observation_time, observation_epoch, local_epoch, temp_f, temp_c, relative_humidity, wind_dir, wind_degrees, wind_mph, wind_gust_mph, wind_kph, wind_gust_kph, pressure_mb, pressure_in, pressure_trend, visibility_mi, visibility_km, precip_1hr_in, precip_1hr_metric, precip_today_in, precip_today_metric, icon)
-        VALUES (:request_datetime, :city, :station_id, :observation_time, :observation_epoch, :local_epoch, :temp_f, :temp_c, :relative_humidity, :wind_dir, :wind_degrees, :wind_mph, :wind_gust_mph, :wind_kph, :wind_gust_kph, :pressure_mb, :pressure_in, :pressure_trend, :visibility_mi, :visibility_km, :precip_1hr_in, :precip_1hr_metric, :precip_today_in, :precip_today_metric, :icon)");
+        $stmt = $conn->prepare("INSERT INTO weather_log (request_datetime, weather_locations_id, city, station_id, observation_time, observation_epoch, local_epoch, temp_f, temp_c, relative_humidity, wind_dir, wind_degrees, wind_mph, wind_gust_mph, wind_kph, wind_gust_kph, pressure_mb, pressure_in, pressure_trend, visibility_mi, visibility_km, precip_1hr_in, precip_1hr_metric, precip_today_in, precip_today_metric, icon)
+        VALUES (:request_datetime, :weather_locations_id, :city, :station_id, :observation_time, :observation_epoch, :local_epoch, :temp_f, :temp_c, :relative_humidity, :wind_dir, :wind_degrees, :wind_mph, :wind_gust_mph, :wind_kph, :wind_gust_kph, :pressure_mb, :pressure_in, :pressure_trend, :visibility_mi, :visibility_km, :precip_1hr_in, :precip_1hr_metric, :precip_today_in, :precip_today_metric, :icon)");
 
         $stmt->bindParam(':request_datetime', $request_datetime);
+        $stmt->bindParam(':weather_locations_id', $weather_locations_id);
         $stmt->bindParam(':city', $city);
         $stmt->bindParam(':station_id', $station_id);
         $stmt->bindParam(':observation_time', $observation_time);
