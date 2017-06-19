@@ -81,31 +81,31 @@ section {
     font-size: 3rem;
     line-height: 6rem;
 }
-.single-source {
+.status-source {
     padding-bottom: 2.5rem;
 }
-.single-source__image {
+.status-source__image {
     padding-right: 2rem;
 }
-.single-source-status--open {
+.status-source-status--open {
     text-transform: uppercase;
     color: darkgreen;
     font-size: 1.25rem;
     font-weight: 600;
 }
-.single-source-status--caution {
+.status-source-status--caution {
     text-transform: uppercase;
     color: #FFD700;
     font-size: 1.25rem;
     font-weight: 600;
 }
-.single-source-status--closed {
+.status-source-status--closed {
     text-transform: uppercase;
     color: red;
     font-size: 1.25rem;
     font-weight: 600;
 }
-.single-source-status--error {
+.status-source-status--error {
     text-transform: uppercase;
     font-size: 1.25rem;
     font-weight: 600;

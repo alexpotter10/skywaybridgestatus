@@ -1,6 +1,6 @@
 <?php 
 
-require 'fetch-data.php';
+require 'fetch-status-data.php';
 
 ?>
 
@@ -48,26 +48,26 @@ require 'fetch-data.php';
         <section class="data-sources row">
             <div class="data-sources__status col-6">
                 <h2>Status by Data Source</h2>
-                <div class="single-source"><!-- FL511 ALERTS -->
-                    <img class="single-source__image" src="images/fl511-logo.png" title="FL511 Traffic and Commuter Information" alt="FL511 logo" align="left"/>
-                    <div class="single-source__content">
-                        <span class="single-source-status--<?php echo $fl511_status_modifier;?>"><?php echo $fl511_status_string;?></span>
+                <div class="status-source"><!-- FL511 ALERTS -->
+                    <img class="status-source__image" src="images/fl511-logo.png" title="FL511 Traffic and Commuter Information" alt="FL511 logo" align="left"/>
+                    <div class="status-source__content">
+                        <span class="status-source-status--<?php echo $fl511_status_modifier;?>"><?php echo $fl511_status_string;?></span>
                         <br/>
                         <a href="https://fl511.com/List/Alerts" title="fl511.com Alerts Page" alt="Link to fl511.com alerts page" target="_new">Get more info on fl511.com ></a>
                     </div>
                 </div>
-                <div class="single-source"><!-- FLHSMV LIVE FEED -->
-                    <img class="single-source__image" src="images/flhsmv-logo.png" title="FL511 Traffic and Commuter Information" alt="FL511 logo" align="left"/>
-                    <div class="single-source__content">
-                        <span class="single-source-status--error">Data coming soon</span>
+                <div class="status-source"><!-- FLHSMV LIVE FEED -->
+                    <img class="status-source__image" src="images/flhsmv-logo.png" title="FL511 Traffic and Commuter Information" alt="FL511 logo" align="left"/>
+                    <div class="status-source__content">
+                        <span class="status-source-status--error">Data coming soon</span>
                         <br/>
                         <a href="https://fl511.com/List/Alerts" title="fl511.com Alerts Page" alt="Link to fl511.com alerts page" target="_new">Get more info on fl511.com ></a>
                     </div>
                 </div>
-                <div class="single-source"><!-- FDOT MYTBI -->
-                    <img class="single-source__image" src="images/fdot-logo.png" title="FL511 Traffic and Commuter Information" alt="FL511 logo" align="left"/>
-                    <div class="single-source__content">
-                        <span class="single-source-status--error">Data coming soon</span>
+                <div class="status-source"><!-- FDOT MYTBI -->
+                    <img class="status-source__image" src="images/fdot-logo.png" title="FL511 Traffic and Commuter Information" alt="FL511 logo" align="left"/>
+                    <div class="status-source__content">
+                        <span class="status-source-status--error">Data coming soon</span>
                         <br/>
                         <a href="https://fl511.com/List/Alerts" title="fl511.com Alerts Page" alt="Link to fl511.com alerts page" target="_new">Get more info on fl511.com ></a>
                     </div>
@@ -75,7 +75,7 @@ require 'fetch-data.php';
             </div>
             <div class="data-sources__weather col-6">
                 <h2>Current Weather</h2>
-                
+
             </div>
         </section>
 

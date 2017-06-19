@@ -49,8 +49,5 @@ if ($fl511_status == 0) {
     $fl511_status_modifier = "error";
 }
 
-
-
-
 ?>
 
