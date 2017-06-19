@@ -1,0 +1,132 @@
+/*!
+ * Skyway Bridge Status CSS
+ * Copyright 2017 Ian Nerney | MIT License
+ */
+
+/* Global
+===================*/
+html {
+    font-size: 16px;
+    color: #4A4A4A;
+}
+body {
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    line-height: 30px;
+    background-color: #F4F4F4;
+}
+h1 {
+    font-size: 2.25rem;
+    line-height: 1.75rem;
+}
+section {
+    padding-bottom: 1rem;
+}
+
+/* Layout
+===================*/
+.header {
+    background-color: #FFFFFF;
+    border-bottom: #979797 1px;
+    box-shadow: 0 4px 2px -2px rgba(0,0,0,0.5);
+    position: fixed;
+    width: 100%;
+}
+.navbar {
+    position: relative;
+}
+.navbar__logo {
+    font-size: 1.75rem;
+    padding: 0.5rem 0;
+}
+.navbar__social-icons {
+    text-align: right;
+    position: absolute;
+    right: 0;
+    top: -20px;
+}
+.navbar__social-icons li {
+    font-size: 2rem;
+    color: #000000;
+    margin: auto;
+    padding-left: 5px;
+}
+.main {
+    padding-top: 5rem;
+}
+.status {
+    text-align: center;
+    padding: 3rem 0;
+    border-bottom: 1px #979797;
+}
+.status--open {
+    text-transform: uppercase;
+    color: darkgreen;
+    font-size: 3rem;
+    line-height: 6rem;
+}
+.status--caution {
+    text-transform: uppercase;
+    color: #FFD700;
+    font-size: 3rem;
+    line-height: 6rem;
+}
+.status--closed {
+    text-transform: uppercase;
+    color: red;
+    font-size: 3rem;
+    line-height: 6rem;
+}
+.status--error {
+    text-transform: uppercase;
+    font-size: 3rem;
+    line-height: 6rem;
+}
+.single-source {
+    padding-bottom: 2.5rem;
+}
+.single-source__image {
+    padding-right: 2rem;
+}
+.single-source-status--open {
+    text-transform: uppercase;
+    color: darkgreen;
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+.single-source-status--caution {
+    text-transform: uppercase;
+    color: #FFD700;
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+.single-source-status--closed {
+    text-transform: uppercase;
+    color: red;
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+.single-source-status--error {
+    text-transform: uppercase;
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+.footer {
+    font-size: 0.875rem;
+    line-height: 1rem;
+}
+
+/* Links
+===================*/
+a {
+    color: #4A4A4A;
+}
+a:hover { 
+    color: #000000;
+}
+
+/* Helpers
+===================*/
+.center {
+    margin: auto;
+    text-align: center;
+}

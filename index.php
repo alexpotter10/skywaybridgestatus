@@ -1,0 +1,104 @@
+<?php 
+
+require 'fetch-data.php';
+
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>SkywayBridgeStatus.com | Is the Sunshine Skyway Bridge closed?</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="Keywords" content="sunshine skyway bridge, sunshine skyway bridge, skyway bridge, skyway bridge status, skyway bridge closure, sunshine skyway, skyway bridge closed, is the skyway bridge closed, sunshine skyway bridge closure, sunshine skyway bridge closed, skyway bridge open or closed, skyway bridge news, skyway bridge traffic, skyway bridge crash, sunshine skyway bridge open">
+    <meta name="Description" content="">
+    <?php //TODO: ADD DESCRIPTION CONTENT ?>
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/css/responsive.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <script src="https://use.fontawesome.com/d726da7372.js"></script>
+</head>
+<body>
+
+<div class="header">
+    <div class="container">
+        <div class="navbar row">
+            <div class="navbar__logo col-4">SkywayBridgeStatus.com</div>
+            <div class="navbar__social-icons col-8">
+                <ul>
+                    <a href="https://twitter.com/SkywayStatus" title="Skyway Bridge Status on Twitter" alt="Skyway Bridge Status Twitter link"><li class="fa fa-twitter-square" aria-hidden="true"></li></a>
+                    <a href="#" title="Skyway Bridge Status on GitHub" alt="Skyway Bridge Status GitHub link"><li class="fa fa-github-square" aria-hidden="true"></li></a>
+                <ul>    
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="main">
+    <div class="container">
+        <section class="status row">
+            <h1>The Sunshine Skyway Bridge is curently 
+            <br/>
+            <span class="status--<?php echo $fl511_status_modifier;?>"><?php echo $fl511_status_string;?></span></h1>
+            <p>Status as of: <?php echo $fetch_datetime;?> | <a href=".">Refresh this page</a></p>
+        </section>
+
+        <section class="data-sources row">
+            <div class="data-sources__status col-6">
+                <h2>Status by Data Source</h2>
+                <div class="single-source"><!-- FL511 ALERTS -->
+                    <img class="single-source__image" src="images/fl511-logo.png" title="FL511 Traffic and Commuter Information" alt="FL511 logo" align="left"/>
+                    <div class="single-source__content">
+                        <span class="single-source-status--<?php echo $fl511_status_modifier;?>"><?php echo $fl511_status_string;?></span>
+                        <br/>
+                        <a href="https://fl511.com/List/Alerts" title="fl511.com Alerts Page" alt="Link to fl511.com alerts page" target="_new">Get more info on fl511.com ></a>
+                    </div>
+                </div>
+                <div class="single-source"><!-- FLHSMV LIVE FEED -->
+                    <img class="single-source__image" src="images/flhsmv-logo.png" title="FL511 Traffic and Commuter Information" alt="FL511 logo" align="left"/>
+                    <div class="single-source__content">
+                        <span class="single-source-status--error">Data coming soon</span>
+                        <br/>
+                        <a href="https://fl511.com/List/Alerts" title="fl511.com Alerts Page" alt="Link to fl511.com alerts page" target="_new">Get more info on fl511.com ></a>
+                    </div>
+                </div>
+                <div class="single-source"><!-- FDOT MYTBI -->
+                    <img class="single-source__image" src="images/fdot-logo.png" title="FL511 Traffic and Commuter Information" alt="FL511 logo" align="left"/>
+                    <div class="single-source__content">
+                        <span class="single-source-status--error">Data coming soon</span>
+                        <br/>
+                        <a href="https://fl511.com/List/Alerts" title="fl511.com Alerts Page" alt="Link to fl511.com alerts page" target="_new">Get more info on fl511.com ></a>
+                    </div>
+                </div>
+            </div>
+            <div class="data-sources__weather col-6">
+                <h2>Current Weather</h2>
+                
+            </div>
+        </section>
+
+        <section class="project-information row">
+            <div class="project-information__about col-8">
+                <h2>About this Project</h2>
+                <p>The Sunshine Skyway bridge is a fantastic structure. Spanning Tampa Bay for over 4 miles, the cable-stayed main span connects St. Petersburg in Pinellas County and Terra Ceia in Manatee County. As the bridge is around 430 tall, it is succeptable to closures due to high-winds, fog, rain, and other causes.</p>
+                <p>SkywayBridgeStatus.com is an open-source initiative aimed at helping Tampa Bay commuters plan for unexpected closures of the Sunshine Skyway Bridge. We are actively collecting real-time weather and traffic data from reputable sources, and our intent is to use that historical data to create a closure prediction model, which will be publically available to Tampa regional commuters.</p>
+            </div>
+            <div class="project-information__contribute col-4">
+                <h2>Contribute</h2>
+                <p>We’re always looking for great contributers to help us improve SkywayBridgeStatus.com. If you’re interested in contributing to this projct, please visit our <a href="#">GitHub page</a>, or email us at <a href="mailto:contribute@skywaybridgestatus.com">contribute@skywaybridgestatus.com</a>.</p>
+                <p>We're also looking for strategic partners and sponsors to help keep this project going. <a href="mailto:contribute@skywaybridgestatus.com">Contact us</a> to learn more.</p>
+            </div>
+        </section>
+
+        <section class="footer row">
+            <div class="footer__copyright center">
+                <p>SkywayBridgeStatus.com &copy; <?php echo date('Y');?> <a href="http://www.iannerney.com">Ian Nerney</a> and other contributers.</p>
+                <p>This project is available for use and modification under the <a href="#">MIT License</a>.</p>
+            </div>
+        </section>
+    </div>
+</div>
+</body>
+</html>
