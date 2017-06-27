@@ -19,7 +19,7 @@ h1 {
     line-height: 1.75rem;
 }
 section {
-    padding-bottom: 1rem;
+    padding-bottom: 2rem;
 }
 
 /* Layout
@@ -55,7 +55,7 @@ section {
 }
 .status {
     text-align: center;
-    padding: 3rem 0;
+    padding: 8rem 0;
     border-bottom: 1px #979797;
 }
 .status--open {
