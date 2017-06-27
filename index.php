@@ -1,6 +1,7 @@
 <?php 
 
 require 'fetch-status-data.php';
+require 'fetch-weather-data.php';
 
 ?>
 
@@ -75,7 +76,22 @@ require 'fetch-status-data.php';
             </div>
             <div class="data-sources__weather col-6">
                 <h2>Current Weather</h2>
-
+                
+                <?php
+                for ($row = 0; $row < 2; $row++) {
+                echo "<div class=\"weather-source\">";
+                echo "<h3> ".$weather_logs[$row]["city"]."</h3>";
+                // NEED FRIENDLY DESCRIPTION OF WEATHER
+                // echo "<img src=\"https://icons.wxug.com/i/c/v4/".$weather_logs[$row]["icon"].".svg\" width=\"75\"/></li>";
+                echo "<ul>";
+                echo "<li>".$weather_logs[$row]["temp_f"]."ºF</li>";
+                echo "<li>Wind direction: ".$weather_logs[$row]["wind_dir"]."</li>";
+                echo "<li>Wind speed: ".$weather_logs[$row]["wind_mph"]." MPH</li>";
+                echo "<li>Visibility: ".$weather_logs[$row]["visibility_mi"]." Miles</li>";
+                echo "</ul>";
+                echo "</div>";
+                }
+                ?>
             </div>
         </section>
 

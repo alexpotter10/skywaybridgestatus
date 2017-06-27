@@ -10,7 +10,6 @@ try {
 
     // set the resulting array to associative
     $weather_logs = $stmt->fetchAll(PDO::FETCH_ASSOC);
-    print_r($weather_logs);
     
 }
 
@@ -19,6 +18,4 @@ catch(PDOException $e) {
 }
 $conn = null;
 
-
 ?>
-
