@@ -11,7 +11,7 @@ Perform REGEX query on fl511 to check for closure or caution, and store status i
 
 Both Directions Closed = 0
 Northbound Closed = 1
-Southboud Closed = 2
+Southbound Closed = 2
 Under Caution for Rain = 3
 Under Caution for High Winds = 4
 Under Caution for Fog = 5
