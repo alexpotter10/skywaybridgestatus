@@ -81,8 +81,8 @@ require 'fetch-weather-data.php';
                 for ($row = 0; $row < 2; $row++) {
                 echo "<div class=\"weather-source\">";
                 echo "<h3> ".$weather_logs[$row]["city"]."</h3>";
-                // NEED FRIENDLY DESCRIPTION OF WEATHER
-                // echo "<img src=\"https://icons.wxug.com/i/c/v4/".$weather_logs[$row]["icon"].".svg\" width=\"75\"/></li>";
+                echo "<img src=\"https://icons.wxug.com/i/c/v4/".$weather_logs[$row]["icon"].".svg\" width=\"75\"/>";
+                echo $weather_logs[$row]["weather"];
                 echo "<ul>";
                 echo "<li>".$weather_logs[$row]["temp_f"]."ºF</li>";
                 echo "<li>Wind direction: ".$weather_logs[$row]["wind_dir"]."</li>";
