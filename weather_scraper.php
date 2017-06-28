@@ -33,6 +33,7 @@ foreach ($weather_locations as $weather_location) {
     $observation_time = $parsed_json->{'current_observation'}->{'observation_time'};
     $observation_epoch = $parsed_json->{'current_observation'}->{'observation_epoch'};
     $local_epoch = $parsed_json->{'current_observation'}->{'local_epoch'};
+    $weather = $parsed_json->{'current_observation'}->{'weather'};
     $temp_f = $parsed_json->{'current_observation'}->{'temp_f'};
     $temp_c = $parsed_json->{'current_observation'}->{'temp_c'};
     $relative_humidity = $parsed_json->{'current_observation'}->{'relative_humidity'};
@@ -60,8 +61,8 @@ foreach ($weather_locations as $weather_location) {
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
         // Prepare SQL and bind parameters
-        $stmt = $conn->prepare("INSERT INTO weather_log (request_datetime, weather_locations_id, city, station_id, observation_time, observation_epoch, local_epoch, temp_f, temp_c, relative_humidity, wind_dir, wind_degrees, wind_mph, wind_gust_mph, wind_kph, wind_gust_kph, pressure_mb, pressure_in, pressure_trend, visibility_mi, visibility_km, precip_1hr_in, precip_1hr_metric, precip_today_in, precip_today_metric, icon)
-        VALUES (:request_datetime, :weather_locations_id, :city, :station_id, :observation_time, :observation_epoch, :local_epoch, :temp_f, :temp_c, :relative_humidity, :wind_dir, :wind_degrees, :wind_mph, :wind_gust_mph, :wind_kph, :wind_gust_kph, :pressure_mb, :pressure_in, :pressure_trend, :visibility_mi, :visibility_km, :precip_1hr_in, :precip_1hr_metric, :precip_today_in, :precip_today_metric, :icon)");
+        $stmt = $conn->prepare("INSERT INTO weather_log (request_datetime, weather_locations_id, city, station_id, observation_time, observation_epoch, local_epoch, weather, temp_f, temp_c, relative_humidity, wind_dir, wind_degrees, wind_mph, wind_gust_mph, wind_kph, wind_gust_kph, pressure_mb, pressure_in, pressure_trend, visibility_mi, visibility_km, precip_1hr_in, precip_1hr_metric, precip_today_in, precip_today_metric, icon)
+        VALUES (:request_datetime, :weather_locations_id, :city, :station_id, :observation_time, :observation_epoch, :local_epoch, :weather, :temp_f, :temp_c, :relative_humidity, :wind_dir, :wind_degrees, :wind_mph, :wind_gust_mph, :wind_kph, :wind_gust_kph, :pressure_mb, :pressure_in, :pressure_trend, :visibility_mi, :visibility_km, :precip_1hr_in, :precip_1hr_metric, :precip_today_in, :precip_today_metric, :icon)");
 
         $stmt->bindParam(':request_datetime', $request_datetime);
         $stmt->bindParam(':weather_locations_id', $weather_locations_id);
@@ -70,6 +71,7 @@ foreach ($weather_locations as $weather_location) {
         $stmt->bindParam(':observation_time', $observation_time);
         $stmt->bindParam(':observation_epoch', $observation_epoch);
         $stmt->bindParam(':local_epoch', $local_epoch);
+        $stmt->bindParam(':weather', $weather);
         $stmt->bindParam(':temp_f', $temp_f);
         $stmt->bindParam(':temp_c', $temp_c);
         $stmt->bindParam(':relative_humidity', $relative_humidity);
@@ -92,8 +94,6 @@ foreach ($weather_locations as $weather_location) {
 
         // Statement variables have been defined; execute!
         $stmt->execute();
-        
-        echo "New record created successfully\n";
     }
     catch(PDOException $e) {
         echo "Error: " . $e->getMessage();

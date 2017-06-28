@@ -62,6 +62,7 @@ CREATE TABLE `weather_log` (
   `observation_time` varchar(40) DEFAULT NULL,
   `observation_epoch` int(11) DEFAULT NULL,
   `local_epoch` int(11) DEFAULT NULL,
+  `weather` varchar(40) DEFAULT NULL,
   `temp_f` decimal(3,1) DEFAULT NULL,
   `temp_c` decimal(3,1) DEFAULT NULL,
   `relative_humidity` varchar(4) DEFAULT NULL,
