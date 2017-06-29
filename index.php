@@ -58,11 +58,11 @@ require 'fetch-weather-data.php';
                     </div>
                 </div>
                 <div class="status-source"><!-- FLHSMV LIVE FEED -->
-                    <img class="status-source__image" src="images/flhsmv-logo.png" title="FL511 Traffic and Commuter Information" alt="FL511 logo" align="left"/>
+                    <img class="status-source__image" src="images/flhsmv-logo.png" title="Florida Department of Highway Stafety and Motor Vehicles" alt="FLHSMV Logo" align="left"/>
                     <div class="status-source__content">
                         <span class="status-source-status--error">Data coming soon</span>
                         <br/>
-                        <a href="https://fl511.com/List/Alerts" title="fl511.com Alerts Page" alt="Link to fl511.com alerts page" target="_new">Get more info on fl511.com ></a>
+                        <a href="https://flhsmv.gov/fhp/traffic/live_traffic_feed.html" title="flhsmv.gov Live Traffic Feed" alt="Link to flhsmv.gov live traffic page" target="_new">Get more info on flhsmv.gov ></a>
                     </div>
                 </div>
                 <div class="status-source"><!-- FDOT MYTBI -->
@@ -70,28 +70,26 @@ require 'fetch-weather-data.php';
                     <div class="status-source__content">
                         <span class="status-source-status--error">Data coming soon</span>
                         <br/>
-                        <a href="https://fl511.com/List/Alerts" title="fl511.com Alerts Page" alt="Link to fl511.com alerts page" target="_new">Get more info on fl511.com ></a>
+                        <a href="http://www.mytbi.com/projects/projects.asp?roadID=9" title="mytbi.com Skyway Page" alt="Link to mytbi.com Skyway page" target="_new">Get more info on mytbi.com ></a>
                     </div>
                 </div>
             </div>
             <div class="data-sources__weather col-6">
-                <h2>Current Weather</h2>
+                <h2>Current Weather from <img src="images/wunderground-logo.png" /></h2>
                 
                 <?php
                 for ($row = 0; $row < 2; $row++) {
                 echo "<div class=\"weather-source\">";
-                echo "<h3> ".$weather_logs[$row]["city"]."</h3>";
-                echo "<img src=\"https://icons.wxug.com/i/c/v4/".$weather_logs[$row]["icon"].".svg\" width=\"75\"/>";
-                echo $weather_logs[$row]["weather"];
+                echo "<h3>".$weather_logs[$row]["city"]."</h3>";
                 echo "<ul>";
-                echo "<li>".$weather_logs[$row]["temp_f"]."ºF</li>";
-                echo "<li>Wind direction: ".$weather_logs[$row]["wind_dir"]."</li>";
-                echo "<li>Wind speed: ".$weather_logs[$row]["wind_mph"]." MPH</li>";
+                echo "<li>Current Conditions: ".$weather_logs[$row]["temp_f"]."ºF and ".$weather_logs[$row]["weather"]."</li>";
+                echo "<li>Wind: ".$weather_logs[$row]["wind_mph"]." MPH from the ".$weather_logs[$row]["wind_dir"]."</li>";
                 echo "<li>Visibility: ".$weather_logs[$row]["visibility_mi"]." Miles</li>";
                 echo "</ul>";
                 echo "</div>";
                 }
                 ?>
+
             </div>
         </section>
 
@@ -110,8 +108,8 @@ require 'fetch-weather-data.php';
 
         <section class="footer row">
             <div class="footer__copyright center">
-                <p>SkywayBridgeStatus.com &copy; <?php echo date('Y');?> <a href="http://www.iannerney.com">Ian Nerney</a> and other contributers.</p>
-                <p>This project is available for use and modification under the <a href="#">MIT License</a>.</p>
+                <p>SkywayBridgeStatus.com &copy; <?php echo date('Y');?> <a href="http://www.iannerney.com">Ian Nerney</a></p>
+                <p>This project is available for use and modification under the <a href="/LICENSE">MIT License</a>.</p>
             </div>
         </section>
     </div>
