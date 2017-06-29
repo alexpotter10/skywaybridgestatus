@@ -61,7 +61,6 @@ try {
     // Statement variables have been defined; execute!
     $stmt->execute();
     
-    echo "New record created successfully\n";
 }
 catch(PDOException $e) {
     echo $sql . "<br>" . $e->getMessage();
