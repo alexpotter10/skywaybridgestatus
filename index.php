@@ -8,12 +8,11 @@ require 'fetch-weather-data.php';
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>SkywayBridgeStatus.com | Is the Sunshine Skyway Bridge closed?</title>
+    <title>SkywayBridgeStatus.com | Is the Sunshine Skyway Bridge open?</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="Keywords" content="sunshine skyway bridge, sunshine skyway bridge, skyway bridge, skyway bridge status, skyway bridge closure, sunshine skyway, skyway bridge closed, is the skyway bridge closed, sunshine skyway bridge closure, sunshine skyway bridge closed, skyway bridge open or closed, skyway bridge news, skyway bridge traffic, skyway bridge crash, sunshine skyway bridge open">
-    <meta name="Description" content="">
-    <?php //TODO: ADD DESCRIPTION CONTENT ?>
+    <meta name="Description" content="Want to know if the Skyway Bridge is open or closed? You've come to the right place! We pull and report the Skyway Bridge status every 5 minutes.">
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="/css/normalize.css">
     <link rel="stylesheet" type="text/css" href="/css/style.css">
@@ -30,7 +29,7 @@ require 'fetch-weather-data.php';
             <div class="navbar__social-icons col-8">
                 <ul>
                     <a href="https://twitter.com/SkywayStatus" title="Skyway Bridge Status on Twitter" alt="Skyway Bridge Status Twitter link"><li class="fa fa-twitter-square" aria-hidden="true"></li></a>
-                    <a href="#" title="Skyway Bridge Status on GitHub" alt="Skyway Bridge Status GitHub link"><li class="fa fa-github-square" aria-hidden="true"></li></a>
+                    <a href="https://github.com/SkywayBridgeStatus" title="Skyway Bridge Status on GitHub" alt="Skyway Bridge Status GitHub link"><li class="fa fa-github-square" aria-hidden="true"></li></a>
                 <ul>    
             </div>
         </div>
@@ -102,7 +101,7 @@ require 'fetch-weather-data.php';
             </div>
             <div class="project-information__contribute col-4">
                 <h2>Contribute</h2>
-                <p>We’re always looking for great contributers to help us improve SkywayBridgeStatus.com. If you’re interested in contributing to this projct, please visit our <a href="#">GitHub page</a>, or email us at <a href="mailto:contribute@skywaybridgestatus.com">contribute@skywaybridgestatus.com</a>.</p>
+                <p>We’re always looking for great contributers to help us improve SkywayBridgeStatus.com. If you’re interested in contributing to this projct, please visit our <a href="https://github.com/SkywayBridgeStatus">GitHub page</a>, or email us at <a href="mailto:contribute@skywaybridgestatus.com">contribute@skywaybridgestatus.com</a>.</p>
                 <p>We're also looking for strategic partners and sponsors to help keep this project going. <a href="mailto:contribute@skywaybridgestatus.com">Contact us</a> to learn more.</p>
             </div>
         </section>
