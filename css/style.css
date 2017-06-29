@@ -15,11 +15,19 @@ body {
     background-color: #F4F4F4;
 }
 h1 {
-    font-size: 2.25rem;
-    line-height: 1.75rem;
+    font-size: 1.75rem;
+    line-height: 2.25rem;
 }
 section {
     padding-bottom: 2rem;
+}
+
+@media only screen and (min-width: 768px) {
+
+    h1 {
+        font-size: 2.25rem;
+    }
+
 }
 
 /* Layout
@@ -35,7 +43,7 @@ section {
     position: relative;
 }
 .navbar__logo {
-    font-size: 1.75rem;
+    font-size: 1rem;
     padding: 0.5rem 0;
 }
 .navbar__social-icons {
@@ -55,8 +63,7 @@ section {
 }
 .status {
     text-align: center;
-    padding: 8rem 0;
-    border-bottom: 1px #979797;
+    padding: 3rem 0;
 }
 .status--open {
     text-transform: uppercase;
@@ -81,11 +88,17 @@ section {
     font-size: 3rem;
     line-height: 6rem;
 }
+.status__data-refreshed {
+    font-size: 0.75rem;
+    line-height: 0.5rem;
+}
 .status-source {
     padding-bottom: 2.5rem;
+    padding-top: 0.5rem;
 }
 .status-source__image {
-    padding-right: 2rem;
+    padding-right: 1rem;
+    width: 75px;
 }
 .status-source-status--open {
     text-transform: uppercase;
@@ -113,6 +126,21 @@ section {
 .footer {
     font-size: 0.875rem;
     line-height: 1rem;
+}
+
+@media only screen and (min-width: 768px) {
+
+    .navbar__logo {
+        font-size: 1.5rem;
+    }
+    .status {
+    padding: 6rem 0;
+    }
+    .status-source__image {
+        padding-right: 2rem;
+        width: 120px;
+    }
+
 }
 
 /* Links
