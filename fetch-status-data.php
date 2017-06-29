@@ -24,35 +24,41 @@ catch(PDOException $e) {
 $conn = null;
 
 // Set global_status
-if ($fl511_status == 0 ) {
+if ($fl511_status === 0) {
     $global_status_string = "closed";
     $global_status_modifier = "closed";
-} else {
+} elseif ($fl511_status === 10) {
     $global_status_string = "open";
     $global_status_modifier = "open";
+} elseif (!empty($fl511_status)) {
+    $global_status_string = "open";
+    $global_status_modifier = "caution";
+} else {
+    $global_status_string = "unknown";
+    $global_status_modifier = "error";
 }
 
 // Set fl511_status
 
-if ($fl511_status == 0) {
+if ($fl511_status === 0) {
     $fl511_status_string = "closed";
     $fl511_status_modifier = "closed";
-} elseif ($fl511_status == 3) {
+} elseif ($fl511_status === 3) {
     $fl511_status_string = "under caution for rain";
     $fl511_status_modifier = "caution";
-} elseif ($fl511_status == 4) {
+} elseif ($fl511_status === 4) {
     $fl511_status_string = "under caution for high winds";
     $fl511_status_modifier = "caution";
-} elseif ($fl511_status == 5) {
+} elseif ($fl511_status === 5) {
     $fl511_status_string = "under caution for fog";
     $fl511_status_modifier = "caution";
-} elseif ($fl511_status == 8) {
+} elseif ($fl511_status === 8) {
     $fl511_status_string = "under caution for police activity";
     $fl511_status_modifier = "caution";
-} elseif ($fl511_status == 9) {
+} elseif ($fl511_status === 9) {
     $fl511_status_string = "under caution";
     $fl511_status_modifier = "caution";
-} elseif ($fl511_status == 10) {
+} elseif ($fl511_status === 10) {
     $fl511_status_string = "open";
     $fl511_status_modifier = "open";
 } else {
