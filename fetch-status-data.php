@@ -23,6 +23,17 @@ catch(PDOException $e) {
 }
 $conn = null;
 
+// Set global_status
+if ($fl511_status == 0 ) {
+    $global_status_string = "closed";
+    $global_status_modifier = "closed";
+} else {
+    $global_status_string = "open";
+    $global_status_modifier = "open";
+}
+
+// Set fl511_status
+
 if ($fl511_status == 0) {
     $fl511_status_string = "closed";
     $fl511_status_modifier = "closed";

@@ -41,7 +41,7 @@ require 'fetch-weather-data.php';
         <section class="status row">
             <h1>The Sunshine Skyway Bridge is curently 
             <br/>
-            <span class="status--<?php echo $fl511_status_modifier;?>"><?php echo $fl511_status_string;?></span></h1>
+            <span class="status--<?php echo $global_status_modifier;?>"><?php echo $global_status_string;?></span></h1>
             <p><a href=".">Refresh this page</a> for the latest data.</p>
             <p class="status__data-refreshed">(Data last refreshed: <?php echo $fetch_datetime;?>)</p>
         </section>
