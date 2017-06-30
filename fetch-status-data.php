@@ -24,7 +24,10 @@ catch(PDOException $e) {
 $conn = null;
 
 // Set global_status
-if ($fl511_status === 0) {
+if (is_null($fl511_status)) {
+    $global_status_string = "unknown";
+    $global_status_modifier = "error";
+} elseif ($fl511_status == 0) {
     $global_status_string = "closed";
     $global_status_modifier = "closed";
 } elseif ($fl511_status == 10) {
@@ -36,11 +39,15 @@ if ($fl511_status === 0) {
 } else {
     $global_status_string = "unknown";
     $global_status_modifier = "error";
-}
+} 
 
 // Set fl511_status
 
-if ($fl511_status === 0) {
+
+if (is_null($fl511_status)) {
+    $fl511_status_string = "unable to fetch status";
+    $fl511_status_modifier = "error";
+} elseif ($fl511_status == 0) {
     $fl511_status_string = "closed";
     $fl511_status_modifier = "closed";
 } elseif ($fl511_status == 3) {
