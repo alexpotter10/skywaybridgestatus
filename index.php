@@ -8,7 +8,7 @@ require 'fetch-weather-data.php';
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>SkywayBridgeStatus.com | Is the Sunshine Skyway Bridge open?</title>
+    <title>Skyway Bridge Status | Is the Sunshine Skyway Bridge open?</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="Keywords" content="sunshine skyway bridge, sunshine skyway bridge, skyway bridge, skyway bridge status, skyway bridge closure, sunshine skyway, skyway bridge closed, is the skyway bridge closed, sunshine skyway bridge closure, sunshine skyway bridge closed, skyway bridge open or closed, skyway bridge news, skyway bridge traffic, skyway bridge crash, sunshine skyway bridge open">
@@ -28,6 +28,7 @@ require 'fetch-weather-data.php';
 
     ga('create', 'UA-101848302-1', 'auto');
     ga('send', 'pageview');
+    refresh('send', 'event',)
 
     </script>
 </head>
