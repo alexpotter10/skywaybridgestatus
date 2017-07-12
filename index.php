@@ -36,7 +36,7 @@ require 'fetch-weather-data.php';
 <div class="header">
     <div class="container">
         <div class="navbar row">
-            <div class="navbar__logo col-4">SkywayBridgeStatus.com</div>
+            <div class="navbar__logo col-4">Skyway Bridge Status</div>
             <div class="navbar__social-icons col-8">
                 <ul>
                     <a href="https://twitter.com/SkywayStatus" title="Skyway Bridge Status on Twitter" alt="Skyway Bridge Status Twitter link"><li class="fa fa-twitter-square" aria-hidden="true"></li></a>
@@ -107,13 +107,11 @@ require 'fetch-weather-data.php';
         <section class="project-information row">
             <div class="project-information__about col-8">
                 <h2>About this Project</h2>
-                <p>The Sunshine Skyway bridge is a fantastic structure. Spanning Tampa Bay for over 4 miles, the cable-stayed main span connects St. Petersburg in Pinellas County and Terra Ceia in Manatee County. As the bridge is around 430 tall, it is succeptable to closures due to high-winds, fog, rain, and other causes.</p>
                 <p>SkywayBridgeStatus.com is an open-source initiative aimed at helping Tampa Bay commuters plan for unexpected closures of the Sunshine Skyway Bridge. We are actively collecting real-time weather and traffic data from reputable sources, and our intent is to use that historical data to create a closure prediction model, which will be publically available to Tampa regional commuters.</p>
             </div>
             <div class="project-information__contribute col-4">
                 <h2>Contribute</h2>
-                <p>We’re always looking for great contributers to help us improve SkywayBridgeStatus.com. If you’re interested in contributing to this projct, please visit our <a href="https://github.com/SkywayBridgeStatus">GitHub page</a>, or email us at <a href="mailto:contribute@skywaybridgestatus.com">contribute@skywaybridgestatus.com</a>.</p>
-                <p>We're also looking for strategic partners and sponsors to help keep this project going. <a href="mailto:contribute@skywaybridgestatus.com">Contact us</a> to learn more.</p>
+                <p>We’re always looking for great contributers and sponsors. If you’re interested in contributing to this projct, please visit our <a href="https://github.com/SkywayBridgeStatus">GitHub page</a>, or <a href="mailto:contribute@skywaybridgestatus.com">email us</a>.</p>
             </div>
         </section>
 
