@@ -36,7 +36,9 @@ require 'fetch-weather-data.php';
 <div class="header">
     <div class="container">
         <div class="navbar row">
-            <div class="navbar__logo col-4">Skyway Bridge Status</div>
+            <div class="navbar__logo col-4">
+                Skyway Bridge Status
+            </div>
             <div class="navbar__social-icons col-8">
                 <ul>
                     <a href="https://twitter.com/SkywayStatus" title="Skyway Bridge Status on Twitter" alt="Skyway Bridge Status Twitter link"><li class="fa fa-twitter-square" aria-hidden="true"></li></a>
@@ -50,11 +52,13 @@ require 'fetch-weather-data.php';
 <div class="main">
     <div class="container">
         <section class="status row">
-            <h1>The Sunshine Skyway Bridge is curently 
-            <br/>
-            <span class="status--<?php echo $global_status_modifier;?>"><?php echo $global_status_string;?></span></h1>
-            <p><a href=".">Refresh this page</a> for the latest data.</p>
-            <p class="status__data-refreshed">(Data last refreshed: <?php echo $fetch_datetime;?>)</p>
+            <div class="status__header col-12">
+                <h1>The Sunshine Skyway Bridge is curently 
+                <br/>
+                <span class="status--<?php echo $global_status_modifier;?>"><?php echo $global_status_string;?></span></h1>
+                <p><a href=".">Refresh this page</a> for the latest data.</p>
+                <p class="status__data-refreshed">(Data last refreshed: <?php echo $fetch_datetime;?>)</p>
+            </div>
         </section>
 
         <section class="data-sources row">
