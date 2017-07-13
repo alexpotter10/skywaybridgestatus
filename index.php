@@ -28,7 +28,6 @@ require 'fetch-weather-data.php';
 
     ga('create', 'UA-101848302-1', 'auto');
     ga('send', 'pageview');
-    refresh('send', 'event',)
 
     </script>
 </head>
