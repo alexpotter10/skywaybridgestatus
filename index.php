@@ -92,7 +92,7 @@ require 'fetch-weather-data.php';
                 <?php
                 for ($row = 0; $row < 2; $row++) {
                 echo "<div class=\"weather-source\">";
-                echo "<h3>".$weather_logs[$row]["city"]."</h3>";
+                echo "<h3>".$weather_logs[$row]["name"]."</h3>";
                 echo "<ul>";
                 echo "<li>Current Conditions: ".$weather_logs[$row]["temp_f"]."ºF and ".$weather_logs[$row]["weather"]."</li>";
                 echo "<li>Wind: ".$weather_logs[$row]["wind_mph"]." MPH from the ".$weather_logs[$row]["wind_dir"]."</li>";

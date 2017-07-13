@@ -5,7 +5,8 @@ require 'config.php';
 try {
     $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $stmt = $conn->prepare("SELECT weather_locations_id, city, observation_time, weather, temp_f, wind_dir, wind_mph, wind_gust_mph, pressure_in, pressure_trend, visibility_mi, precip_today_in, icon FROM weather_log ORDER BY request_datetime DESC LIMIT 2"); 
+    $stmt = $conn->prepare("SELECT log.*, loc.name FROM weather_log log INNER JOIN weather_locations loc ON log.weather_locations_id = loc.id WHERE log.id = (SELECT t2.id FROM weather_log t2 WHERE t2.weather_locations_id = log.weather_locations_id ORDER BY t2.id DESC LIMIT 1)"); 
+    
     $stmt->execute();
 
     // set the resulting array to associative
