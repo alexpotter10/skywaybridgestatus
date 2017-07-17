@@ -53,7 +53,7 @@ require 'fetch-weather-data.php';
     <div class="container">
         <section class="status row">
             <div class="status__header col-12">
-                <h1>The Sunshine Skyway Bridge is curently 
+                <h1>The Sunshine Skyway Bridge is currently 
                 <br/>
                 <span class="status--<?php echo $global_status_modifier;?>"><?php echo $global_status_string;?></span></h1>
                 <p><a href=".">Refresh this page</a> for the latest data.</p>
