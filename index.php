@@ -111,11 +111,11 @@ require 'fetch-weather-data.php';
         <section class="project-information row">
             <div class="project-information__about col-8">
                 <h2>About this Project</h2>
-                <p>SkywayBridgeStatus.com is an open-source initiative aimed at helping Tampa Bay commuters plan for unexpected closures of the Sunshine Skyway Bridge. We are actively collecting real-time weather and traffic data from reputable sources, and our intent is to use that historical data to create a closure prediction model, which will be publically available to Tampa regional commuters.</p>
+                <p>SkywayBridgeStatus.com is an open-source initiative aimed at helping Tampa Bay commuters plan for unexpected closures of the Sunshine Skyway Bridge. We are actively collecting real-time weather and traffic data from reputable sources, and our intent is to use that historical data to create a closure prediction model, which will be publicly available to Tampa regional commuters.</p>
             </div>
             <div class="project-information__contribute col-4">
                 <h2>Contribute</h2>
-                <p>We’re always looking for great contributers and sponsors. If you’re interested in contributing to this projct, please visit our <a href="https://github.com/SkywayBridgeStatus">GitHub page</a>, or <a href="mailto:contribute@skywaybridgestatus.com">email us</a>.</p>
+                <p>We’re always looking for great contributors and sponsors. If you’re interested in contributing to this project, please visit our <a href="https://github.com/SkywayBridgeStatus">GitHub page</a>, or <a href="mailto:contribute@skywaybridgestatus.com">email us</a>.</p>
             </div>
         </section>
 
