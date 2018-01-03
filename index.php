@@ -14,9 +14,9 @@ require 'fetch-weather-data.php';
     <meta name="Keywords" content="sunshine skyway bridge, sunshine skyway bridge, skyway bridge, skyway bridge status, skyway bridge closure, sunshine skyway, skyway bridge closed, is the skyway bridge closed, sunshine skyway bridge closure, sunshine skyway bridge closed, skyway bridge open or closed, skyway bridge news, skyway bridge traffic, skyway bridge crash, sunshine skyway bridge open">
     <meta name="Description" content="Want to know if the Sunshine Skyway Bridge is open or closed? You've come to the right place! We pull and report the Skyway Bridge status every 5 minutes.">
     <link rel="canonical" href="https://www.skywaybridgestatus.com" />
-    <link rel="stylesheet" type="text/css" href="/css/normalize.css">
-    <link rel="stylesheet" type="text/css" href="/css/style.css">
-    <link rel="stylesheet" type="text/css" href="/css/responsive.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/responsive.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <script src="https://use.fontawesome.com/d726da7372.js"></script>
     <!-- GOOGLE ANALYTICS -->
@@ -65,7 +65,7 @@ require 'fetch-weather-data.php';
             <div class="data-sources__status col-6">
                 <h2>Status by Data Source</h2>
                 <div class="status-source"><!-- FL511 ALERTS -->
-                    <img class="status-source__image" src="images/fl511-logo.png" title="FL511 Traffic and Commuter Information" alt="FL511 logo" align="left"/>
+                    <img class="status-source__image" src="assets/img/fl511-logo.png" title="FL511 Traffic and Commuter Information" alt="FL511 logo" align="left"/>
                     <div class="status-source__content">
                         <span class="status-source-status--<?php echo $fl511_status_modifier;?>"><?php echo $fl511_status_string;?></span>
                         <br/>
@@ -73,7 +73,7 @@ require 'fetch-weather-data.php';
                     </div>
                 </div>
                 <div class="status-source"><!-- FLHSMV LIVE FEED -->
-                    <img class="status-source__image" src="images/flhsmv-logo.png" title="Florida Department of Highway Stafety and Motor Vehicles" alt="FLHSMV Logo" align="left"/>
+                    <img class="status-source__image" src="assets/img/flhsmv-logo.png" title="Florida Department of Highway Stafety and Motor Vehicles" alt="FLHSMV Logo" align="left"/>
                     <div class="status-source__content">
                         <span class="status-source-status--error">Data coming soon</span>
                         <br/>
@@ -81,7 +81,7 @@ require 'fetch-weather-data.php';
                     </div>
                 </div>
                 <div class="status-source"><!-- FDOT MYTBI -->
-                    <img class="status-source__image" src="images/fdot-logo.png" title="FL511 Traffic and Commuter Information" alt="FL511 logo" align="left"/>
+                    <img class="status-source__image" src="assets/img/fdot-logo.png" title="FL511 Traffic and Commuter Information" alt="FL511 logo" align="left"/>
                     <div class="status-source__content">
                         <span class="status-source-status--error">Data coming soon</span>
                         <br/>
@@ -90,7 +90,7 @@ require 'fetch-weather-data.php';
                 </div>
             </div>
             <div class="data-sources__weather col-6">
-                <h2>Current Weather from <img src="images/wunderground-logo.png" /></h2>
+                <h2>Current Weather from <img src="assets/img/wunderground-logo.png" /></h2>
                 
                 <?php
                 for ($row = 0; $row < 2; $row++) {
