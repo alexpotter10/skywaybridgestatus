@@ -9,7 +9,7 @@ try {
     // Prepare SQL query
     $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $stmt = $conn->prepare("SELECT * FROM planned_closures pc WHERE pc.start_datetime > CURDATE() ORDER BY pc.start_datetime DESC LIMIT 1;"); 
+    $stmt = $conn->prepare("SELECT * FROM planned_closures pc WHERE pc.end_datetime > CURDATE() ORDER BY pc.start_datetime DESC LIMIT 1;"); 
     
     $stmt->execute();
 
