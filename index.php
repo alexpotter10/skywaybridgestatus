@@ -16,8 +16,17 @@ require 'fetch-planned-closures.php';
     <meta name="Description" content="Want to know if the Sunshine Skyway Bridge is open or closed? You've come to the right place! We pull and report the Skyway Bridge status every 5 minutes.">
     <link rel="canonical" href="https://www.skywaybridgestatus.com" />
     <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Libre+Franklin" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <script src="https://use.fontawesome.com/d726da7372.js"></script>
+    <!-- FAVICONS -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
     <!-- GOOGLE ANALYTICS -->
     <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -35,11 +44,8 @@ require 'fetch-planned-closures.php';
 <div class="header">
     <div class="container">
         <div class="navbar row">
-            <div class="navbar__logo col-6">
-                Skyway Bridge Status
-            </div>
-            <div class="navbar__navigation col-6">
-                <a href="mailto:info@skywaybridgestatus.com" title="Contact" alt="Contact Link">Contact</a>
+            <div class="navbar__logo col-12">
+                <img id="sbs-logo" src="/assets/img/logos/skyway-bridge-status-logo.svg" title="Skyway Bridge Status" alt="Skyway Bridge Status logo" />
             </div>
         </div>
     </div>

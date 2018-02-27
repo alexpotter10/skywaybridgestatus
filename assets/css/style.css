@@ -476,11 +476,17 @@ html {
 body {
   font-family: 'Roboto', Arial, Helvetica, sans-serif;
   line-height: 30px;
-  background-color: #F4F4F4; }
+  background-color: #F9FBFB; }
 
 h1 {
+  font-family: 'Libre Franklin', Arial, Helvetica, sans-serif;
+  color: #000000;
   font-size: 1.75rem;
   line-height: 2.25rem; }
+
+h2 {
+  font-family: 'Libre Franklin', Arial, Helvetica, sans-serif;
+  color: #000000; }
 
 section {
   padding-bottom: 2rem; }
@@ -500,8 +506,11 @@ section {
 .navbar {
   position: relative; }
 
-.navbar__logo {
-  font-size: 1rem; }
+#sbs-logo {
+  display: block;
+  height: 60px;
+  margin-left: auto;
+  margin-right: auto; }
 
 .navbar__navigation {
   display: none;
