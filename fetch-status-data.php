@@ -13,7 +13,8 @@ try {
 
     foreach ($skyway_status as $skyway_status) {
         $fl511_status = $skyway_status["fl511_status"];
-        $fetch_datetime = $skyway_status["datetime"];
+        $fetch_datetime = date_create($skyway_status["datetime"]);
+
     }
     
 }
