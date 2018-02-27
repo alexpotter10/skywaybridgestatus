@@ -53,29 +53,28 @@ require 'fetch-planned-closures.php';
                 <h1>The Sunshine Skyway Bridge is currently 
                 <br/>
                 <span class="status--<?php echo $global_status_modifier;?>"><?php echo $global_status_string;?></span></h1>
-                <p><a href=".">Refresh this page</a> for the latest data.</p>
-                <p class="status__data-refreshed">(Data last refreshed: <?php echo date_format($fetch_datetime,'F jS, Y \a\t g:ia');?>)</p>
+                <p><a href=".">Refresh this page</a> for the latest data. We update our status every 5 minutes.</p>
+                <p class="status__data-refreshed">(Status last updated: <?php echo date_format($fetch_datetime,'F jS, Y \a\t g:ia');?>)</p>
             </div>
         </section>
 
+        <?php
+        // Loop for annoucement – SQL limited to 1 result
+        foreach($planned_closure as $planned_closure):
+            
+            // Store new date variables
+            $start_date = date_create($planned_closure["start_datetime"]);
+            $end_date = date_create($planned_closure["end_datetime"]);
+        
+        ?>
+
         <section class="announcements col-12">
             <div class="announcements-box">
-                <?php
-                // Pull announcement information
-                for ($row = 0; $row < 1; $row++) {
-                // Store new date variables
-                $start_date = date_create($planned_closure[$row]["start_datetime"]);
-                $end_date = date_create($planned_closure[$row]["end_datetime"]);
-                // Display announcement
-                echo "<b>PLANNED CLOSURE ALERT:</b> ".$planned_closure[$row]["closed_direction"]." traffic on the Skyway Bridge will be suspended from ".date_format($start_date,'g:ia \o\n l F jS, Y')." to ".date_format($end_date,'g:ia \o\n l F jS, Y')." for ".$planned_closure[$row]["reason"].".";
-                    // Display URL if field is not null
-                    if (isset($planned_closure[$row]["url"])) {
-                        echo " <a href=\"".$planned_closure[$row]["url"]."\">Learn more.</a>";
-                    }
-                }
-                ?>
+                <b>PLANNED CLOSURE ALERT:</b> <?php echo $planned_closure["closed_direction"]; ?> traffic on the Skyway Bridge will be suspended from <?php echo date_format($start_date,'g:ia \o\n l F jS, Y'); ?> to <?php echo date_format($end_date,'g:ia \o\n l F jS, Y'); ?> for <?php echo $planned_closure["reason"]; ?>. <a href="<?php echo $planned_closure["url"]; ?>"> Learn more.</a>
             </div>
         </section>
+
+        <?php endforeach; ?>
 
         <section class="data-sources row">
             <div class="data-sources__status col-6">
