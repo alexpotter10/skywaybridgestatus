@@ -25,6 +25,8 @@ Unable to query source = NULL
 $fl511 = file_get_contents('https://fl511.com/List/Alerts');
 if (empty($fl511)) {
     $fl511_status = NULL; //unable to query source
+} elseif (preg_match('/(?=.*?\bSunshine Skyway Bridge will be\b).*/', $fl511)) {
+    $fl511_status = 10; //planned closure announcement - assume open
 } elseif (preg_match('/(?=.*?\bSunshine\b)(?=.*?\bSkyway\b)(?=.*?\bclosed\b).*/', $fl511)) {
     $fl511_status = 0; //closed
 } elseif (preg_match('/(?=.*?\bSunshine\b)(?=.*?\bSkyway\b)(?=.*?\bcaution\b)(?=.*?\brain\b).*/', $fl511)) {
