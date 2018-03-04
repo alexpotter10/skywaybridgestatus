@@ -51,6 +51,12 @@ if (is_null($fl511_status)) {
 } elseif ($fl511_status == 0) {
     $fl511_status_string = "closed";
     $fl511_status_modifier = "closed";
+} elseif ($fl511_status == 1) {
+    $fl511_status_string = "closed Northbound";
+    $fl511_status_modifier = "closed";
+} elseif ($fl511_status == 2) {
+    $fl511_status_string = "closed Southbound";
+    $fl511_status_modifier = "closed";
 } elseif ($fl511_status == 3) {
     $fl511_status_string = "under caution for rain";
     $fl511_status_modifier = "caution";
