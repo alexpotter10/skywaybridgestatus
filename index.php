@@ -45,7 +45,7 @@ require 'fetch-planned-closures.php';
     <div class="container">
         <div class="navbar row">
             <div class="navbar__logo col-12">
-                <img id="sbs-logo" src="/assets/img/logos/skyway-bridge-status-logo.svg" title="Skyway Bridge Status" alt="Skyway Bridge Status logo" />
+                <a href="/" title="Skyway Bridge Status"><?php include 'assets/img/logos/skyway-bridge-status-logo.svg';?></a>
             </div>
         </div>
     </div>
