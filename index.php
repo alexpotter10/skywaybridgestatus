@@ -41,15 +41,7 @@ require 'fetch-planned-closures.php';
 </head>
 <body>
 
-<div class="header">
-    <div class="container">
-        <div class="navbar row">
-            <div class="navbar__logo col-12">
-                <a href="/" title="Skyway Bridge Status"><?php include 'assets/img/logos/skyway-bridge-status-logo.svg';?></a>
-            </div>
-        </div>
-    </div>
-</div>
+<?php include 'template-parts/header.php';?>
 
 <div class="main">
     <div class="container">
@@ -140,16 +132,8 @@ require 'fetch-planned-closures.php';
             </div>
         </section>
 
-        <section class="footer row">
-            <div class="footer__copyright center col-12">
-                <p>SkywayBridgeStatus.com &copy; <?php echo date('Y');?> <a href="http://www.iannerney.com">Ian Nerney</a></p>
-                <p>This project is available for use and modification under the <a href="/LICENSE">MIT License</a>.</p>
-                <ul class="footer__social-icons">
-                    <a href="https://twitter.com/SkywayStatus" title="Skyway Bridge Status on Twitter" alt="Skyway Bridge Status Twitter link"><li class="fa fa-twitter-square" aria-hidden="true"></li></a>
-                    <a href="https://github.com/SkywayBridgeStatus" title="Skyway Bridge Status on GitHub" alt="Skyway Bridge Status GitHub link"><li class="fa fa-github-square" aria-hidden="true"></li></a>
-                <ul>    
-            </div>
-        </section>
+        <?php include 'template-parts/footer.php';?>
+
     </div>
 </div>
 </body>
