@@ -39,13 +39,13 @@
     <div class="container">
         <section class="terms col-12">
 
-            <h2>
+            <h1>
                 Terms and Conditions of Use
-            </h2>
+            </h1>
 
-            <h3>
+            <h2>
                 1. Terms
-            </h3>
+            </h2>
 
             <p>
                 By accessing this web site, you are agreeing to be bound by these 
@@ -56,9 +56,9 @@
                 protected by applicable copyright and trade mark law.
             </p>
 
-            <h3>
+            <h2>
                 2. Use License
-            </h3>
+            </h2>
 
             <p>
                 The <a href="/LICENSE">MIT License</a> applies to the use and distribution of this software.
@@ -79,9 +79,9 @@
 
                 </blockquote>
 
-            <h3>
+            <h2>
                 3. Disclaimer
-            </h3>
+            </h2>
 
             <ol type="a">
                 <li>
@@ -89,41 +89,41 @@
                 </li>
             </ol>
 
-            <h3>
+            <h2>
                 4. Limitations
-            </h3>
+            </h2>
 
             <p>
                 In no event shall Ian Nerney or related parties be liable for any damages (including, without limitation, damages for loss of data or profit, or due to business interruption,) arising out of the use or inability to use the materials on Ian Nerney's Internet site, even if Ian Nerney or a authorized representative has been notified orally or in writing of the possibility of such damage. Because some jurisdictions do not allow limitations on implied warranties, or limitations of liability for consequential or incidental damages, these limitations may not apply to you.
             </p>
                         
-            <h3>
+            <h2>
                 5. Revisions and Errata
-            </h3>
+            </h2>
 
             <p>
                 The materials appearing on Ian Nerney's web site could include technical, typographical, or photographic errors. Ian Nerney does not warrant that any of the materials on its web site are accurate, complete, or current. Ian Nerney may make changes to the materials contained on its web site at any time without notice. Ian Nerney does not, however, make any commitment to update the materials.
             </p>
 
-            <h3>
+            <h2>
                 6. Links
-            </h3>
+            </h2>
 
             <p>
                 Ian Nerney has not reviewed all of the sites linked to its Internet web site and is not responsible for the contents of any such linked site. The inclusion of any link does not imply endorsement by Ian Nerney of the site. Use of any such linked web site is at the user's own risk.
             </p>
 
-            <h3>
+            <h2>
                 7. Site Terms of Use Modifications
-            </h3>
+            </h2>
 
             <p>
                 Ian Nerney may revise these terms of use for its web site at any time without notice. By using this web site you are agreeing to be bound by the then current version of these Terms and Conditions of Use.
             </p>
 
-            <h3>
+            <h2>
                 8. Governing Law
-            </h3>
+            </h2>
 
             <p>
                 Any claim relating to Ian Nerney's web site shall be governed by the laws of the State of Florida without regard to its conflict of law provisions.
