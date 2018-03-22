@@ -5,7 +5,7 @@ require 'config.php';
 try {
     $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $stmt = $conn->prepare("SELECT id, fl511_status, datetime FROM status_log ORDER BY datetime DESC LIMIT 1"); 
+    $stmt = $conn->prepare("/*" . MYSQLND_QC_ENABLE_SWITCH . "*/" . "SELECT id, fl511_status, datetime FROM status_log ORDER BY datetime DESC LIMIT 1"); 
     $stmt->execute();
 
     // set the resulting array to associative
