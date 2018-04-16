@@ -43,6 +43,9 @@ require 'fetch-planned-closures.php';
                 <p><a href=".">Refresh this page</a> for the latest data. We update our status every 5 minutes.</p>
                 <p class="status__data-refreshed">(Status last updated: <?php echo date_format($fetch_datetime,'F jS, Y \a\t g:ia');?>)</p>
             </div>
+            <div class="status__facebook-like-button">
+                <iframe src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.skywaybridgestatus.com%2F&width=140&layout=button_count&action=like&size=large&show_faces=true&share=true&height=46&appId=1853913434627398" width="140" height="46" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+            </div>
         </section>
 
         <?php
