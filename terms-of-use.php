@@ -121,6 +121,42 @@
 
         </section>
 
+        <section class="privacy col-12" id="privacy-policy">
+
+            <h1>
+                Privacy Policy
+            </h1>
+
+            <p>
+                Your privacy is very important to us. Accordingly, we have developed this Policy in order for you to understand how we collect, use, communicate and disclose and make use of personal information. The following outlines our privacy policy.
+            </p>
+
+            <h2>
+                Cookies
+            </h2>
+
+            <p>
+                We may use cookies in order to customize this site for return visitors.  These cookies are not required for site functionality.  Additionally, third-party widgets may install cookies depending on their configuration.  You are not required to accept any cookies to use this site.
+            </p>
+
+            <h2>
+                Google Analytics
+            </h2>
+
+            <p>
+                We use a tool called “Google Analytics” to collect information about use of this site. Google Analytics collects information such as how often users visit this site, what pages they visit when they do so, and what other sites they used prior to coming to this site. We use the information we get from Google Analytics only to improve this site. Google Analytics collects only the IP address assigned to you on the date you visit this site, rather than your name or other identifying information. We do not combine the information collected through the use of Google Analytics with personally identifiable information. Although Google Analytics plants a permanent cookie on your web browser to identify you as a unique user the next time you visit this site, the cookie cannot be used by anyone but Google. Google’s ability to use and share information collected by Google Analytics about your visits to this site is restricted by the <a href="https://www.google.com/analytics/terms/us.html">Google Analytics Terms of Service</a> and the <a href="https://policies.google.com/privacy?hl=en&gl=us">Google Privacy Policy</a>. You can prevent Google Analytics from recognizing you on return visits to this site by disabling cookies on your browser.
+            </p>
+
+            <h2>
+                Questions?
+            </h2>
+
+            <p>
+                If you have any questions about use of your data, or if you have any privacy concerns relating to your use of this website, please contact us at <a href="mailto:contact@skywaybridgestatus.com">contact@skywaybridgestatus.com</a>.
+            </p>		
+
+        </section>
+
         <?php include 'template-parts/footer.php';?>
 
     </div>
