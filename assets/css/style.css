@@ -483,6 +483,9 @@ h1 {
   color: #000000;
   font-size: 1.75rem;
   line-height: 2.25rem; }
+  @media only screen and (min-width: 768px) {
+    h1 {
+      font-size: 2.25rem; } }
 
 h2 {
   font-family: 'Libre Franklin', Arial, Helvetica, sans-serif;
@@ -491,9 +494,6 @@ h2 {
 section {
   padding-bottom: 2rem; }
 
-@media only screen and (min-width: 768px) {
-  h1 {
-    font-size: 2.25rem; } }
 /* Layout
 ===================*/
 .header {
@@ -507,24 +507,31 @@ section {
 
 #sbs-logo {
   display: block;
-  height: 60px;
+  height: 40px;
   margin-left: auto;
   margin-right: auto;
   max-width: 90vw; }
+  @media only screen and (min-width: 768px) {
+    #sbs-logo {
+      height: 50px; } }
+
+@media only screen and (min-width: 768px) {
+  .navbar__logo {
+    font-size: 1.5rem; } }
 
 .navbar__navigation {
   display: none;
   text-align: right; }
-  @media only screen and (min-width: 769px) and (max-width: 1024px) {
-    .navbar__navigation {
-      display: initial; } }
-  @media only screen and (min-width: 1025px) {
+  @media only screen and (min-width: 768px) {
     .navbar__navigation {
       display: initial; } }
 
 .status {
   text-align: center;
-  padding: 3rem 0; }
+  padding: 1rem 0; }
+  @media only screen and (min-width: 768px) {
+    .status {
+      padding: 3rem 0; } }
 
 .status--open {
   text-transform: uppercase;
@@ -560,6 +567,10 @@ section {
 .status-source__image {
   padding-right: 1rem;
   width: 75px; }
+  @media only screen and (min-width: 768px) {
+    .status-source__image {
+      padding-right: 2rem;
+      width: 120px; } }
 
 .status-source-status--open {
   text-transform: uppercase;
@@ -590,6 +601,32 @@ section {
   padding: 10px;
   background-color: rgba(255, 215, 0, 0.15); }
 
+.ads__explanation {
+  width: 300px;
+  text-align: right;
+  margin: auto;
+  font-size: 0.75rem; }
+  @media only screen and (min-width: 768px) {
+    .ads__explanation {
+      width: 728px; } }
+
+.ad-main__content {
+  text-align: center; }
+
+.ad-main__mobile iframe {
+  display: initial;
+  margin: auto; }
+  @media only screen and (min-width: 768px) {
+    .ad-main__mobile iframe {
+      display: none; } }
+
+.ad-main__desktop iframe {
+  display: none; }
+  @media only screen and (min-width: 768px) {
+    .ad-main__desktop iframe {
+      display: initial;
+      margin: auto; } }
+
 .footer {
   font-size: 0.875rem;
   line-height: 1rem; }
@@ -598,16 +635,6 @@ section {
   font-size: 2rem;
   padding: initial; }
 
-@media only screen and (min-width: 768px) {
-  .navbar__logo {
-    font-size: 1.5rem; }
-
-  .status {
-    padding: 6rem 0; }
-
-  .status-source__image {
-    padding-right: 2rem;
-    width: 120px; } }
 /* Links
 ===================*/
 a {

@@ -9,17 +9,21 @@ $break-tablet: 768px;
 $break-desktop: 1024px;
 
 @mixin respond-to($media) {
-    @if $media == mobile {
-        @media only screen and (max-width: $break-mobile) { @content; }
+    @if $media == small-mobile {
+        @media only screen and (max-width: $break-mobile -1) { @content; }
     }
-    @else if $media == large-mobile {
-        @media only screen and (min-width: $break-mobile +1) and (max-width: $break-tablet) { @content; }
+    @else if $media == mobile {
+        @media only screen and (min-width: $break-mobile) and (max-width: $break-tablet - 1) { @content; }
     }
     @else if $media == tablet {
-        @media only screen and (min-width: $break-tablet + 1) and (max-width: $break-desktop) { @content; }
+        @media only screen and (min-width: $break-tablet) and (max-width: $break-desktop - 1) { @content; }
     }
     @else if $media == desktop {
-        @media only screen and (min-width: $break-desktop + 1) { @content; }
+        @media only screen and (min-width: $break-desktop) { @content; }
+    }
+    // Not Mobile
+    @else if $media == tablet-or-greater {
+        @media only screen and (min-width: $break-tablet) { @content; }
     }
 }
 
@@ -46,6 +50,9 @@ h1 {
     color: #000000;
     font-size: 1.75rem;
     line-height: 2.25rem;
+    @include respond-to(tablet-or-greater) {
+        font-size: 2.25rem;
+    }
 }
 h2 {
     font-family: 'Libre Franklin', Arial, Helvetica, sans-serif;
@@ -55,13 +62,6 @@ section {
     padding-bottom: 2rem;
 }
 
-@media only screen and (min-width: 768px) {
-
-    h1 {
-        font-size: 2.25rem;
-    }
-
-}
 
 /* Layout
 ===================*/
@@ -76,24 +76,32 @@ section {
 }
 #sbs-logo {
     display: block;
-    height: 60px;
+    height: 40px;
     margin-left: auto;
     margin-right: auto;
     max-width: 90vw;
+    @include respond-to(tablet-or-greater) {
+        height: 50px;
+    }
+}
+.navbar__logo {
+    @include respond-to(tablet-or-greater) {
+        font-size: 1.5rem;
+    }
 }
 .navbar__navigation {
     display: none;
     text-align: right;
-    @include respond-to(tablet) {
-        display: initial;
-    }
-    @include respond-to(desktop) {
+    @include respond-to(tablet-or-greater) {
         display: initial;
     }
 }
 .status {
     text-align: center;
-    padding: 3rem 0;
+    padding: 1rem 0;
+    @include respond-to(tablet-or-greater) {
+        padding: 3rem 0;
+    }
 }
 .status--open {
     text-transform: uppercase;
@@ -129,6 +137,10 @@ section {
 .status-source__image {
     padding-right: 1rem;
     width: 75px;
+    @include respond-to(tablet-or-greater) {
+        padding-right: 2rem;
+        width: 120px;
+    }
 }
 .status-source-status--open {
     text-transform: uppercase;
@@ -159,6 +171,33 @@ section {
     padding: 10px;
     background-color: rgba(255,215,0,0.15);
 }
+.ads__explanation {
+    width: 300px;
+    text-align: right;
+    margin: auto;
+    font-size: 0.75rem;
+    @include respond-to(tablet-or-greater) {
+        width: 728px;
+    }
+}
+.ad-main__content {
+    text-align: center;
+}
+.ad-main__mobile iframe {
+    display: initial;
+    margin: auto;
+    @include respond-to(tablet-or-greater) {
+        display: none;
+    }
+}
+
+.ad-main__desktop iframe {
+    display: none;
+    @include respond-to(tablet-or-greater) {
+        display: initial;
+        margin: auto;
+    }
+}
 .footer {
     font-size: 0.875rem;
     line-height: 1rem;
@@ -166,21 +205,6 @@ section {
 .footer__social-icons {
     font-size: 2rem;
     padding: initial;
-}
-
-@media only screen and (min-width: 768px) {
-
-    .navbar__logo {
-        font-size: 1.5rem;
-    }
-    .status {
-    padding: 6rem 0;
-    }
-    .status-source__image {
-        padding-right: 2rem;
-        width: 120px;
-    }
-
 }
 
 /* Links
