@@ -34,6 +34,7 @@ require 'fetch-planned-closures.php';
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
     <?php include 'template-parts/tracking.php';?>
+    <?php include 'template-parts/advertising.php';?>
 </head>
 <body>
 
