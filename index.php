@@ -22,7 +22,7 @@ require 'fetch-planned-closures.php';
     <meta property="og:description" content="Want to know if the Sunshine Skyway Bridge is open or closed? You've come to the right place! We pull and report the Skyway Bridge status every 5 minutes." />
     <meta property="og:image" content="/assets/img/skywaystatus-og.jpg" />
     <!-- External Assets -->
-    <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/style.css" as="style" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Libre+Franklin" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <script src="https://use.fontawesome.com/d726da7372.js"></script>
@@ -51,7 +51,8 @@ require 'fetch-planned-closures.php';
                 <p class="status__data-refreshed">(Status last updated: <?php echo date_format($fetch_datetime,'F jS, Y \a\t g:ia');?>)</p>
             </div>
             <div class="status__facebook-like-button">
-                <iframe src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.skywaybridgestatus.com%2F&width=140&layout=button_count&action=like&size=large&show_faces=true&share=true&height=46&appId=1853913434627398" width="150" height="46" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+                <div class="fb-like" data-href="https://www.skywaybridgestatus.com" data-layout="button_count" data-action="like" data-size="large" data-show-faces="false" data-share="true"></div>
+                <style>.bmc-button img{width: 20px !important;margin-bottom: 1px !important;box-shadow: none !important;border: none !important;vertical-align: middle !important;}.bmc-button{    line-height:24px !important;height: 27px !important;top: 7px;position: relative; !important;text-decoration: none !important;display:inline-flex !important;color:#000000 !important;background-color:#FFFFFF !important;border-radius: 3px !important;border: 1px solid transparent !important;padding: 0px 6px !important;font-size: 14px !important;letter-spacing:-0.08px !important;;box-shadow: 0px 1px 2px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5) !important;margin: 0 1px !important;font-family:'Lato', sans-serif !important;-webkit-box-sizing: border-box !important;box-sizing: border-box !important;-o-transition: 0.3s all linear !important;-webkit-transition: 0.3s all linear !important;-moz-transition: 0.3s all linear !important;-ms-transition: 0.3s all linear !important;transition: 0.3s all linear !important;}.bmc-button:hover, .bmc-button:active, .bmc-button:focus {-webkit-box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5) !important;text-decoration: none !important;box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5) !important;opacity: 0.85 !important;color:#000000 !important;}</style><link href="https://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext" rel="stylesheet"><a class="bmc-button" target="_blank" href="https://www.buymeacoffee.com/iannerney"><img src="https://www.buymeacoffee.com/assets/img/BMC-btn-logo.svg" alt="Buy us a coffee"><span style="margin-left:5px">Buy me a coffee</span></a>
             </div>
         </section>
 
@@ -74,20 +75,6 @@ require 'fetch-planned-closures.php';
         </section>
 
         <?php endforeach; ?>
-
-        <section class="ad-main row">
-            <div class="ad-main__content col-12">
-                <div class="ad-main__mobile">
-                    <iframe src="//rcm-na.amazon-adsystem.com/e/cm?o=1&p=12&l=ez&f=ifr&linkID=e2176811beea9c4c4b07f522188a0500&t=leewardintera-20&tracking_id=leewardintera-20" width="300" height="250" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0"></iframe>
-                </div>
-                <div class="ad-main__desktop">
-                    <iframe src="//rcm-na.amazon-adsystem.com/e/cm?o=1&p=48&l=ez&f=ifr&linkID=4aacc3c69fcb1f9af4ef0ab44bec70cf&t=leewardintera-20&tracking_id=leewardintera-20" width="728" height="90" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0"></iframe>
-                </div>
-                <div class="ads__explanation">
-                    <a href="/advertising-policy/">Why Ads?</a> | <a href="mailto:contact@skywaybridgestatus.com?subject=Advertising Information Request">Advertise With Us</a>
-                </div>
-            </div>
-        </section>
 
         <section class="data-sources row">
             <div class="data-sources__status col-6">
@@ -139,11 +126,11 @@ require 'fetch-planned-closures.php';
         <section class="project-information row">
             <div class="project-information__about col-8">
                 <h2>About this Project</h2>
-                <p>SkywayBridgeStatus.com is an open-source initiative aimed at helping Tampa Bay commuters plan for unexpected closures of the Sunshine Skyway Bridge. We are actively collecting real-time weather and traffic data from reputable sources, and our intent is to use that historical data to create a closure prediction model, which will be publicly available to Tampa regional commuters.</p>
+                <p>SkywayBridgeStatus.com is an open-source initiative aimed at helping Tampa Bay commuters plan for unexpected closures of the Sunshine Skyway Bridge. This web application actively collects real-time weather and traffic data from reputable sources. My goal is to use this historical data to create a closure prediction model available to the public.</p>
             </div>
             <div class="project-information__contribute col-4">
                 <h2>Contribute</h2>
-                <p>We’re always looking for great contributors and sponsors. If you’re interested in contributing to this project, please visit our <a href="https://github.com/SkywayBridgeStatus">GitHub page</a>, or <a href="mailto:contribute@skywaybridgestatus.com">email us</a>.</p>
+                <p>If you’re interested in contributing to, or sponsoring this project, please visit our <a href="https://github.com/SkywayBridgeStatus">GitHub page</a>, or <a href="mailto:contribute@skywaybridgestatus.com">email us</a>.</p>
             </div>
         </section>
 
