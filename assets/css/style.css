@@ -1,7 +1,3 @@
-/* Global Variables
-===================*/
-/* Import Other Stylesheets
-===================*/
 /*! normalize.css v7.0.0 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
@@ -467,6 +463,20 @@ template {
 .no-padding {
   padding: initial; }
 
+/* Font Definitions
+===================*/
+@font-face {
+  font-family: 'Libre Franklin';
+  font-style: normal;
+  font-weight: 400;
+  src: local("Libre Franklin"), local("LibreFranklin-Regular"), url(/assets/fonts/libre-franklin.woff2) format("woff2"), url(https://fonts.gstatic.com/s/librefranklin/v2/jizDREVItHgc8qDIbSTKq4XkRiUf2zcZiVbJ.woff2) format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: local("Roboto"), local("Roboto-Regular"), url(/assets/fonts/roboto.woff2) format("woff2"), url(https://fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu4mxKKTU1Kg.woff2) format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
 /* Global
 ===================*/
 html {
@@ -474,12 +484,12 @@ html {
   color: #4A4A4A; }
 
 body {
-  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+  font-family: 'Roboto', Arial, sans-serif;
   line-height: 30px;
   background-color: #F9FBFB; }
 
 h1 {
-  font-family: 'Libre Franklin', Arial, Helvetica, sans-serif;
+  font-family: 'Libre Franklin', Arial, sans-serif;
   color: #000000;
   font-size: 1.75rem;
   line-height: 2.25rem; }
@@ -488,7 +498,7 @@ h1 {
       font-size: 2.25rem; } }
 
 h2 {
-  font-family: 'Libre Franklin', Arial, Helvetica, sans-serif;
+  font-family: 'Libre Franklin', Arial, sans-serif;
   color: #000000; }
 
 section {
