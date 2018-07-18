@@ -22,7 +22,8 @@ require 'fetch-planned-closures.php';
     <meta property="og:description" content="Want to know if the Sunshine Skyway Bridge is open or closed? You've come to the right place! We pull and report the Skyway Bridge status every 5 minutes." />
     <meta property="og:image" content="/assets/img/skywaystatus-og.jpg" />
     <!-- External Assets -->
-    <link rel="stylesheet" href="/assets/css/style.css" as="style" type="text/css">
+    <link rel="preload" href="/assets/css/style.css" as="style" type="text/css">
+    <link rel="stylesheet" href="/assets/css/style.css" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Libre+Franklin" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <script src="https://use.fontawesome.com/d726da7372.js"></script>
