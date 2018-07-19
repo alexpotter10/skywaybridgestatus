@@ -48,7 +48,7 @@ require 'fetch-planned-closures.php';
             </div>
             <div class="status__facebook-like-button">
                 <div class="fb-like" data-href="https://www.skywaybridgestatus.com" data-layout="button_count" data-action="like" data-size="large" data-show-faces="false" data-share="true"></div>
-                <style>.bmc-button img{width: 20px !important;margin-bottom: 1px !important;box-shadow: none !important;border: none !important;vertical-align: middle !important;}.bmc-button{    line-height:24px !important;height: 27px !important;top: 7px;position: relative; !important;text-decoration: none !important;display:inline-flex !important;color:#000000 !important;background-color:#FFFFFF !important;border-radius: 3px !important;border: 1px solid transparent !important;padding: 0px 6px !important;font-size: 14px !important;letter-spacing:-0.08px !important;;box-shadow: 0px 1px 2px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5) !important;margin: 0 1px !important;font-family:'Roboto', sans-serif !important;-webkit-box-sizing: border-box !important;box-sizing: border-box !important;-o-transition: 0.3s all linear !important;-webkit-transition: 0.3s all linear !important;-moz-transition: 0.3s all linear !important;-ms-transition: 0.3s all linear !important;transition: 0.3s all linear !important;}.bmc-button:hover, .bmc-button:active, .bmc-button:focus {-webkit-box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5) !important;text-decoration: none !important;box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5) !important;opacity: 0.85 !important;color:#000000 !important;}</style><a class="bmc-button" target="_blank" href="https://www.buymeacoffee.com/iannerney"><img src="https://www.buymeacoffee.com/assets/img/BMC-btn-logo.svg" alt="Buy me a coffee"><span style="margin-left:5px;margin-right:5px;">Buy me a coffee</span></a>
+                <style>.bmc-button img{width: 20px !important;margin-bottom: 1px !important;box-shadow: none !important;border: none !important;vertical-align: middle !important;}.bmc-button{    line-height:24px !important;height: 27px !important;top: 7px;position: relative; !important;text-decoration: none !important;display:inline-flex !important;color:#000000 !important;background-color:#FFFFFF !important;border-radius: 3px !important;border: 1px solid transparent !important;padding: 0px 6px !important;font-size: 14px !important;letter-spacing:-0.08px !important;;box-shadow: 0px 1px 2px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5) !important;margin: 0 1px !important;font-family:'Roboto', sans-serif !important;-webkit-box-sizing: border-box !important;box-sizing: border-box !important;-o-transition: 0.3s all linear !important;-webkit-transition: 0.3s all linear !important;-moz-transition: 0.3s all linear !important;-ms-transition: 0.3s all linear !important;transition: 0.3s all linear !important;}.bmc-button:hover, .bmc-button:active, .bmc-button:focus {-webkit-box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5) !important;text-decoration: none !important;box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5) !important;opacity: 0.85 !important;color:#000000 !important;}</style><a class="bmc-button"  href="https://www.buymeacoffee.com/iannerney" target="_blank" rel="noopener"><img src="https://www.buymeacoffee.com/assets/img/BMC-btn-logo.svg" alt="Buy me a coffee"><span style="margin-left:5px;margin-right:5px;">Buy me a coffee</span></a>
             </div>
         </section>
 
@@ -80,7 +80,7 @@ require 'fetch-planned-closures.php';
                     <div class="status-source__content">
                         <span class="status-source-status--<?php echo $fl511_status_modifier;?>"><?php echo $fl511_status_string;?></span>
                         <br/>
-                        <a href="https://fl511.com/List/Alerts" title="fl511.com Alerts Page" alt="Link to fl511.com alerts page" target="_new" rel="noopener">Get more info on fl511.com ></a>
+                        <a href="https://fl511.com/List/Alerts" title="fl511.com Alerts Page" alt="Link to fl511.com alerts page" target="_blank" rel="noopener">Get more info on fl511.com ></a>
                     </div>
                 </div>
                 <div class="status-source"><!-- FLHSMV LIVE FEED -->
@@ -88,7 +88,7 @@ require 'fetch-planned-closures.php';
                     <div class="status-source__content">
                         <span class="status-source-status--error">Data coming soon</span>
                         <br/>
-                        <a href="https://flhsmv.gov/fhp/traffic/live_traffic_feed.html" title="flhsmv.gov Live Traffic Feed" alt="Link to flhsmv.gov live traffic page" target="_new" rel="noopener">Get more info on flhsmv.gov ></a>
+                        <a href="https://flhsmv.gov/fhp/traffic/live_traffic_feed.html" title="flhsmv.gov Live Traffic Feed" alt="Link to flhsmv.gov live traffic page" target="_blank" rel="noopener">Get more info on flhsmv.gov ></a>
                     </div>
                 </div>
                 <div class="status-source"><!-- FDOT MYTBI -->
@@ -96,7 +96,7 @@ require 'fetch-planned-closures.php';
                     <div class="status-source__content">
                         <span class="status-source-status--error">Data coming soon</span>
                         <br/>
-                        <a href="http://www.mytbi.com/projects/projects.asp?roadID=9" title="mytbi.com Skyway Page" alt="Link to mytbi.com Skyway page" target="_new" rel="noopener">Get more info on mytbi.com ></a>
+                        <a href="http://www.mytbi.com/projects/projects.asp?roadID=9" title="mytbi.com Skyway Page" alt="Link to mytbi.com Skyway page" target="_blank" rel="noopener">Get more info on mytbi.com ></a>
                     </div>
                 </div>
             </div>
