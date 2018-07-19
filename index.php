@@ -80,7 +80,7 @@ require 'fetch-planned-closures.php';
                     <div class="status-source__content">
                         <span class="status-source-status--<?php echo $fl511_status_modifier;?>"><?php echo $fl511_status_string;?></span>
                         <br/>
-                        <a href="https://fl511.com/List/Alerts" title="fl511.com Alerts Page" alt="Link to fl511.com alerts page" target="_new">Get more info on fl511.com ></a>
+                        <a href="https://fl511.com/List/Alerts" title="fl511.com Alerts Page" alt="Link to fl511.com alerts page" target="_new" rel="noopener">Get more info on fl511.com ></a>
                     </div>
                 </div>
                 <div class="status-source"><!-- FLHSMV LIVE FEED -->
@@ -88,7 +88,7 @@ require 'fetch-planned-closures.php';
                     <div class="status-source__content">
                         <span class="status-source-status--error">Data coming soon</span>
                         <br/>
-                        <a href="https://flhsmv.gov/fhp/traffic/live_traffic_feed.html" title="flhsmv.gov Live Traffic Feed" alt="Link to flhsmv.gov live traffic page" target="_new">Get more info on flhsmv.gov ></a>
+                        <a href="https://flhsmv.gov/fhp/traffic/live_traffic_feed.html" title="flhsmv.gov Live Traffic Feed" alt="Link to flhsmv.gov live traffic page" target="_new" rel="noopener">Get more info on flhsmv.gov ></a>
                     </div>
                 </div>
                 <div class="status-source"><!-- FDOT MYTBI -->
@@ -96,7 +96,7 @@ require 'fetch-planned-closures.php';
                     <div class="status-source__content">
                         <span class="status-source-status--error">Data coming soon</span>
                         <br/>
-                        <a href="http://www.mytbi.com/projects/projects.asp?roadID=9" title="mytbi.com Skyway Page" alt="Link to mytbi.com Skyway page" target="_new">Get more info on mytbi.com ></a>
+                        <a href="http://www.mytbi.com/projects/projects.asp?roadID=9" title="mytbi.com Skyway Page" alt="Link to mytbi.com Skyway page" target="_new" rel="noopener">Get more info on mytbi.com ></a>
                     </div>
                 </div>
             </div>
