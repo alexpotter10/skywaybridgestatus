@@ -121,7 +121,7 @@ require 'fetch-planned-closures.php';
 
         <section class="project-information row">
             <div class="project-information__about col-8">
-                <h2>About this Project</h2>
+                <h2>About This Project</h2>
                 <p>SkywayBridgeStatus.com is an open-source initiative aimed at helping Tampa Bay commuters plan for unexpected closures of the Sunshine Skyway Bridge. This web application actively collects real-time weather and traffic data from reputable sources. My goal is to use this historical data to create a closure prediction model available to the public.</p>
             </div>
             <div class="project-information__contribute col-4">
