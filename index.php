@@ -76,7 +76,7 @@ require 'fetch-planned-closures.php';
             <div class="data-sources__status col-6">
                 <h2>Status by Data Source</h2>
                 <div class="status-source"><!-- FL511 ALERTS -->
-                    <img class="status-source__image" src="assets/img/fl511-logo.png" title="FL511 Traffic and Commuter Information" alt="FL511 logo" align="left"/>
+                    <img class="status-source__image" src="assets/img/fl511-logo.png" title="FL511 Traffic and Commuter Information" alt="FL511 Traffic and Commuter Information" align="left"/>
                     <div class="status-source__content">
                         <span class="status-source-status--<?php echo $fl511_status_modifier;?>"><?php echo $fl511_status_string;?></span>
                         <br/>
@@ -84,19 +84,18 @@ require 'fetch-planned-closures.php';
                     </div>
                 </div>
                 <div class="status-source"><!-- FLHSMV LIVE FEED -->
-                    <img class="status-source__image" src="assets/img/flhsmv-logo.png" title="Florida Department of Highway Stafety and Motor Vehicles" alt="FLHSMV Logo" align="left"/>
+                    <img class="status-source__image" src="assets/img/flhsmv-logo.png" title="Florida Department of Highway Stafety and Motor Vehicles" alt="Florida Department of Highway Safety and Motor Vehicles" align="left"/>
                     <div class="status-source__content">
                         <span class="status-source-status--error">Data coming soon</span>
                         <br/>
                         <a href="https://flhsmv.gov/fhp/traffic/live_traffic_feed.html" title="flhsmv.gov Live Traffic Feed" alt="Link to flhsmv.gov live traffic page" target="_blank" rel="noopener">Get more info on flhsmv.gov ></a>
                     </div>
                 </div>
+                <h2>Road Construction Information</h2>
                 <div class="status-source"><!-- FDOT MYTBI -->
-                    <img class="status-source__image" src="assets/img/fdot-logo.png" title="FL511 Traffic and Commuter Information" alt="FL511 logo" align="left"/>
+                    <img class="status-source__image" src="assets/img/fdot-logo.png" title="Florida Department of Transportation" alt="Florida Department of Transportation" align="left"/>
                     <div class="status-source__content">
-                        <span class="status-source-status--error">Data coming soon</span>
-                        <br/>
-                        <a href="http://www.mytbi.com/projects/projects.asp?roadID=9" title="mytbi.com Skyway Page" alt="Link to mytbi.com Skyway page" target="_blank" rel="noopener">Get more info on mytbi.com ></a>
+                        <a href="http://www.fdottampabay.com/projects/road/sunshine-skyway" title="FDOT Skyway Bridge project page" alt="Link to FDOT Skyway Brudge project page" target="_blank" rel="noopener">Get more info on fdottampabay.com ></a>
                     </div>
                 </div>
             </div>
