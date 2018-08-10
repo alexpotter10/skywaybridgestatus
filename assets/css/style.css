@@ -615,32 +615,6 @@ section {
   padding: 10px;
   background-color: rgba(255, 215, 0, 0.15); }
 
-.ads__explanation {
-  width: 300px;
-  text-align: right;
-  margin: auto;
-  font-size: 0.75rem; }
-  @media only screen and (min-width: 768px) {
-    .ads__explanation {
-      width: 728px; } }
-
-.ad-main__content {
-  text-align: center; }
-
-.ad-main__mobile iframe {
-  display: initial;
-  margin: auto; }
-  @media only screen and (min-width: 768px) {
-    .ad-main__mobile iframe {
-      display: none; } }
-
-.ad-main__desktop iframe {
-  display: none; }
-  @media only screen and (min-width: 768px) {
-    .ad-main__desktop iframe {
-      display: initial;
-      margin: auto; } }
-
 .footer {
   font-size: 0.875rem;
   line-height: 1rem; }

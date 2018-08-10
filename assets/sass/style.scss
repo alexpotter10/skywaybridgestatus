@@ -187,33 +187,6 @@ section {
     padding: 10px;
     background-color: rgba(255,215,0,0.15);
 }
-.ads__explanation {
-    width: 300px;
-    text-align: right;
-    margin: auto;
-    font-size: 0.75rem;
-    @include respond-to(tablet-or-greater) {
-        width: 728px;
-    }
-}
-.ad-main__content {
-    text-align: center;
-}
-.ad-main__mobile iframe {
-    display: initial;
-    margin: auto;
-    @include respond-to(tablet-or-greater) {
-        display: none;
-    }
-}
-
-.ad-main__desktop iframe {
-    display: none;
-    @include respond-to(tablet-or-greater) {
-        display: initial;
-        margin: auto;
-    }
-}
 .footer {
     font-size: 0.875rem;
     line-height: 1rem;
