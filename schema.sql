@@ -7,7 +7,7 @@
 #
 # Host: localhost (MySQL 5.7.17)
 # Database: skyway_db
-# Generation Time: 2017-06-22 13:41:19 +0000
+# Generation Time: 2018-10-10 15:51:04 +0000
 # ************************************************************
 
 
@@ -18,6 +18,45 @@
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+
+# Dump of table planned_closures
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `planned_closures`;
+
+CREATE TABLE `planned_closures` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `start_datetime` datetime NOT NULL,
+  `end_datetime` datetime NOT NULL,
+  `reason` varchar(50) NOT NULL DEFAULT '',
+  `url` varchar(225) DEFAULT NULL,
+  `closed_direction` varchar(120) NOT NULL DEFAULT '',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
+
+# Dump of table skywaywx_log
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `skywaywx_log`;
+
+CREATE TABLE `skywaywx_log` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `wind_speed` decimal(3,1) DEFAULT NULL,
+  `wind_direction` int(3) DEFAULT NULL,
+  `wind_gust` decimal(3,1) DEFAULT NULL,
+  `air_temperature` decimal(3,1) DEFAULT NULL,
+  `relative_humidity` decimal(3,1) DEFAULT NULL,
+  `pressure_mb` varchar(5) DEFAULT '',
+  `precip_1h` decimal(2,1) DEFAULT NULL,
+  `precip_today` decimal(2,1) DEFAULT NULL,
+  `request_datetime` datetime NOT NULL,
+  `observation_datetime` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
 
 
 # Dump of table status_log
@@ -43,6 +82,7 @@ CREATE TABLE `weather_locations` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `city` varchar(30) DEFAULT '',
   `state` varchar(2) DEFAULT '',
+  `name` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
