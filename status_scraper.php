@@ -70,6 +70,13 @@ try {
 }
 catch(PDOException $e) {
     echo $sql . "<br>" . $e->getMessage();
+
+    // Send error to Sentry
+    $sentryClient->captureException($e, array(
+        'extra' => array(
+            'php_version' => phpversion()
+        ),
+    ));
 }
 
 // Close the connection

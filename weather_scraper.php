@@ -97,6 +97,13 @@ foreach ($weather_locations as $weather_location) {
     }
     catch(PDOException $e) {
         echo "Error: " . $e->getMessage();
+
+        // Send error to Sentry
+        $sentryClient->captureException($e, array(
+            'extra' => array(
+                'php_version' => phpversion()
+            ),
+        ));
     }
 }
 
