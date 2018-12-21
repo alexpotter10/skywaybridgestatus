@@ -35,7 +35,7 @@ if (is_null($fl511_status)) {
     $global_status_string = "open";
     $global_status_modifier = "open";
 } elseif (!empty($fl511_status)) {
-    $global_status_string = "open";
+    $global_status_string = "open with an advisory";
     $global_status_modifier = "caution";
 } else {
     $global_status_string = "unknown";

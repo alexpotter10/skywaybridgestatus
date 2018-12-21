@@ -555,9 +555,13 @@ section {
 
 .status--caution {
   text-transform: uppercase;
-  color: #FFD700;
-  font-size: 3rem;
-  line-height: 6rem; }
+  color: #FFB600;
+  font-size: 2rem;
+  line-height: 2.75rem; }
+  @media only screen and (min-width: 768px) {
+    .status--caution {
+      font-size: 3rem;
+      line-height: 6rem; } }
 
 .status--closed {
   text-transform: uppercase;
@@ -594,7 +598,7 @@ section {
 
 .status-source-status--caution {
   text-transform: uppercase;
-  color: #FFD700;
+  color: #FFB600;
   font-size: 1.25rem;
   font-weight: 600; }
 
