@@ -97,7 +97,7 @@ require 'fetch-planned-closures.php';
                         <div class="response" id="mce-success-response" style="display:none"></div>
                     </div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
                     <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_f0159a3cfad26bb6d5c07f288_b3f668b8e6" tabindex="-1" value=""></div>
-                    <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+                    <div class="clear"><input type="submit" value="Get Early Access" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
                     </div>
                 </form>
                 </div>
