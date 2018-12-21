@@ -72,6 +72,40 @@ require 'fetch-planned-closures.php';
 
         <?php endforeach; ?>
 
+        <section class="subscribe row">
+            <div class="subscribe__content">
+                <h2><span class="subscribe__coming-soon">Coming Soon! </span><br/>Notifications by Text and Email</h2>
+                <p>I've had many requests to provide status notifications by text and email, and I'm happy to say I should have this feature live in February. If you'd like to have early access to this new feature, please input your email below, and I'll let you know when it's ready! <br/><br/>Thanks for using Skyway Bridge Status! <br/>&mdash; Ian</p>
+                <!-- Begin Mailchimp Signup Form -->
+                <div id="mc_embed_signup">
+                <form action="https://skywaybridgestatus.us7.list-manage.com/subscribe/post?u=f0159a3cfad26bb6d5c07f288&amp;id=b3f668b8e6" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+                    <div id="mc_embed_signup_scroll">
+                <div class="mc-field-group">
+                    <label for="mce-FNAME">First Name</label>
+                    <input type="text" value="" name="FNAME" class="" id="mce-FNAME">
+                </div>
+                <div class="mc-field-group">
+                    <label for="mce-EMAIL">Email Address</label>
+                    <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
+                </div>
+                <div class="mc-field-group">
+                    <label for="mce-PHONE">Mobile Phone Number</label>
+                    <input type="text" value="" name="PHONE" class="" id="mce-PHONE">
+                </div>
+                    <div id="mce-responses" class="clear">
+                        <div class="response" id="mce-error-response" style="display:none"></div>
+                        <div class="response" id="mce-success-response" style="display:none"></div>
+                    </div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_f0159a3cfad26bb6d5c07f288_b3f668b8e6" tabindex="-1" value=""></div>
+                    <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+                    </div>
+                </form>
+                </div>
+
+                <!--End mc_embed_signup-->
+            </div>
+        </section>
+
         <section class="data-sources row">
             <div class="data-sources__status col-6">
                 <h2>Status by Data Source</h2>
