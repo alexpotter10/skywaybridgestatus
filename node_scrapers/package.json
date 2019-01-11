@@ -1,0 +1,16 @@
+{
+  "name": "skyway-status-scraper",
+  "version": "1.0.0",
+  "description": "An application to scrape Skyway Bridge status data from reputable sources.",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ian Nerney",
+  "license": "MIT",
+  "dependencies": {
+    "@sentry/node": "^4.5.0",
+    "config": "^3.0.1",
+    "mysql": "^2.16.0",
+    "puppeteer": "^1.11.0"
+  }
+}

@@ -1,13 +1,5 @@
 # ************************************************************
-# Sequel Pro SQL dump
-# Version 4541
-#
-# http://www.sequelpro.com/
-# https://github.com/sequelpro/sequelpro
-#
-# Host: localhost (MySQL 5.7.17)
-# Database: skyway_db
-# Generation Time: 2018-10-10 15:51:04 +0000
+# Generation Time: 2019-01-11 17:12:08 +0000
 # ************************************************************
 
 
@@ -20,10 +12,65 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 
-# Dump of table planned_closures
+# Dump of table active_statuses
 # ------------------------------------------------------------
 
-DROP TABLE IF EXISTS `planned_closures`;
+CREATE TABLE `active_statuses` (
+   `source` VARCHAR(5) NOT NULL DEFAULT '',
+   `location` VARCHAR(255) NULL DEFAULT NULL,
+   `message` VARCHAR(255) NULL DEFAULT NULL,
+   `last_fetched` DATETIME NULL DEFAULT NULL
+) ENGINE=MyISAM;
+
+
+
+# Dump of table fl511_log
+# ------------------------------------------------------------
+
+CREATE TABLE `fl511_log` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `region` varchar(55) DEFAULT NULL,
+  `county` varchar(255) DEFAULT NULL,
+  `message` varchar(255) DEFAULT NULL,
+  `last_updated` varchar(55) DEFAULT NULL,
+  `request_datetime` timestamp NULL DEFAULT NULL,
+  `active` tinyint(1) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `active` (`active`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
+
+# Dump of table flhsmv_log
+# ------------------------------------------------------------
+
+CREATE TABLE `flhsmv_log` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `incident_id` varchar(24) DEFAULT '',
+  `object_id` int(8) DEFAULT NULL,
+  `dispatch_center` varchar(5) DEFAULT NULL,
+  `incident_date` varchar(11) DEFAULT NULL,
+  `incident_time` varchar(11) DEFAULT NULL,
+  `urgency` varchar(4) DEFAULT NULL,
+  `lat` decimal(10,8) DEFAULT NULL,
+  `lon` decimal(11,8) DEFAULT NULL,
+  `event_type` varchar(200) DEFAULT NULL,
+  `county` varchar(255) DEFAULT NULL,
+  `location` varchar(200) DEFAULT NULL,
+  `remarks` varchar(200) DEFAULT NULL,
+  `dispatch_time` varchar(8) DEFAULT NULL,
+  `arrival_time` varchar(10) DEFAULT NULL,
+  `geometry_x` decimal(11,8) DEFAULT NULL,
+  `geometry_y` decimal(11,8) DEFAULT NULL,
+  `request_datetime` datetime NOT NULL,
+  `active` tinyint(1) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
+
+# Dump of table planned_closures
+# ------------------------------------------------------------
 
 CREATE TABLE `planned_closures` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
@@ -40,8 +87,6 @@ CREATE TABLE `planned_closures` (
 # Dump of table skywaywx_log
 # ------------------------------------------------------------
 
-DROP TABLE IF EXISTS `skywaywx_log`;
-
 CREATE TABLE `skywaywx_log` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `wind_speed` decimal(3,1) DEFAULT NULL,
@@ -52,8 +97,8 @@ CREATE TABLE `skywaywx_log` (
   `pressure_mb` varchar(5) DEFAULT '',
   `precip_1h` decimal(2,1) DEFAULT NULL,
   `precip_today` decimal(2,1) DEFAULT NULL,
-  `request_datetime` datetime NOT NULL,
   `observation_datetime` datetime DEFAULT NULL,
+  `request_datetime` datetime NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -61,8 +106,6 @@ CREATE TABLE `skywaywx_log` (
 
 # Dump of table status_log
 # ------------------------------------------------------------
-
-DROP TABLE IF EXISTS `status_log`;
 
 CREATE TABLE `status_log` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
@@ -76,8 +119,6 @@ CREATE TABLE `status_log` (
 # Dump of table weather_locations
 # ------------------------------------------------------------
 
-DROP TABLE IF EXISTS `weather_locations`;
-
 CREATE TABLE `weather_locations` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `city` varchar(30) DEFAULT '',
@@ -90,8 +131,6 @@ CREATE TABLE `weather_locations` (
 
 # Dump of table weather_log
 # ------------------------------------------------------------
-
-DROP TABLE IF EXISTS `weather_log`;
 
 CREATE TABLE `weather_log` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
@@ -127,6 +166,20 @@ CREATE TABLE `weather_log` (
 
 
 
+
+
+# Replace placeholder table for active_statuses with correct view syntax
+# ------------------------------------------------------------
+
+DROP TABLE `active_statuses`;
+
+CREATE VIEW `active_statuses`
+AS SELECT
+   'FHP' AS `source`,
+   `flhsmv_log`.`county` AS `location`,
+   `flhsmv_log`.`remarks` AS `message`,
+   `flhsmv_log`.`request_datetime` AS `last_fetched`
+FROM `flhsmv_log` where (`flhsmv_log`.`active` = 1) union select 'FL511' AS `source`,`fl511_log`.`county` AS `location`,`fl511_log`.`message` AS `message`,`fl511_log`.`request_datetime` AS `last_fetched` from `fl511_log` where (`fl511_log`.`active` = 1);
 
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
