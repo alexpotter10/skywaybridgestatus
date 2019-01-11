@@ -1,0 +1,10 @@
+{
+    "MySQL": {
+        "dbConfig": {
+        "host": "",
+        "user": "",
+        "password": "",
+        "database": ""
+        }
+    }
+}

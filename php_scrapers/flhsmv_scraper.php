@@ -12,9 +12,37 @@ $json_string = file_get_contents('https://gis.flhsmv.gov/arcgisfhptrafficsite/re
 // Parse JSON
 $parsed_json = json_decode($json_string);
 
-// Loop through objects to find items with "SKYWAY" in the location key
+// Clear off any active statuses
+try {
+    $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+    // Set the PDO error mode to exception
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+    // Prepare SQL and bind parameters
+    $stmt = $conn->prepare("UPDATE flhsmv_log SET active = 0 WHERE active = 1;");
+
+    // Statement has been defined; execute!
+    $stmt->execute();
+
+    // Close the connection
+    $conn = null;
+
+}
+catch(PDOException $e) {
+    echo "Error: " . $e->getMessage();
+
+    // Send error to Sentry
+    $sentryClient->captureException($e, array(
+        'extra' => array(
+            'php_version' => phpversion()
+        ),
+    ));
+}
+
+// Loop through objects returned in JSON string
 foreach ($parsed_json->{'features'} as $key ) {
     $location = $key->{'attributes'}->{'LOCATION'};
+    // Is there an active Skyway notice?
     if (preg_match('/(?=.*?\bSKYWAY\b).*/', $location)) {
         $incident_id = $key->{'attributes'}->{'INCIDENTID'};
         $object_id = $key->{'attributes'}->{'OBJECTID'};
@@ -33,6 +61,7 @@ foreach ($parsed_json->{'features'} as $key ) {
         $arrival_time = $key->{'attributes'}->{'ARRIVETIME'};
         $geometry_x = $key->{'geometry'}->{'x'};
         $geometry_y = $key->{'geometry'}->{'y'};
+        $active = 1; // Set boolean field to indicate status is active
 
         try {
             $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
@@ -40,8 +69,9 @@ foreach ($parsed_json->{'features'} as $key ) {
             $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
             // Prepare SQL and bind parameters
-            $stmt = $conn->prepare("INSERT INTO flhsmv_log (incident_id, object_id, dispatch_center, incident_date, incident_time, urgency, lat, lon, event_type, county, location, remarks, dispatch_time, arrival_time, geometry_x, geometry_y, request_datetime)
-            VALUES (:incident_id, :object_id, :dispatch_center, :incident_date, :incident_time, :urgency, :lat, :lon, :event_type, :location, :county, :remarks, :dispatch_time, :arrival_time, :geometry_x, :geometry_y, :request_datetime)");
+            $stmt = $conn->prepare(
+            "INSERT INTO flhsmv_log (incident_id, object_id, dispatch_center, incident_date, incident_time, urgency, lat, lon, event_type, location, county, remarks, dispatch_time, arrival_time, geometry_x, geometry_y, request_datetime, active)
+            VALUES (:incident_id, :object_id, :dispatch_center, :incident_date, :incident_time, :urgency, :lat, :lon, :event_type, :location, :county, :remarks, :dispatch_time, :arrival_time, :geometry_x, :geometry_y, :request_datetime, :active);");
 
             $stmt->bindParam(':incident_id', $incident_id);
             $stmt->bindParam(':object_id', $object_id);
@@ -60,9 +90,13 @@ foreach ($parsed_json->{'features'} as $key ) {
             $stmt->bindParam(':geometry_x', $geometry_x);
             $stmt->bindParam(':geometry_y', $geometry_y);
             $stmt->bindParam(':request_datetime', $request_datetime);
+            $stmt->bindParam(':active', $active);
 
-            // Statement variables have been defined; execute!
+            // Statement has been defined; execute!
             $stmt->execute();
+
+            // Close the connection
+            $conn = null;
 
         }
         catch(PDOException $e) {
@@ -75,10 +109,6 @@ foreach ($parsed_json->{'features'} as $key ) {
                 ),
             ));
         }
-
-        // Close the connection
-        $conn = null;
-
     }
 };
 

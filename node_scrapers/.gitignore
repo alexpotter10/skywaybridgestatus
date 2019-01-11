@@ -1,0 +1,13 @@
+# Helpful ignore directives: https://github.com/github/gitignore/blob/master/Node.gitignore
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Dependency Directories
+node_modules/
+
+# Config Files
+config/default.json
+config/production.json
