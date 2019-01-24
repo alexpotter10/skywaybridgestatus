@@ -578,40 +578,36 @@ section {
   font-size: 0.75rem;
   line-height: 0.5rem; }
 
-.status-source {
-  padding-bottom: 1rem;
-  padding-top: 0.5rem; }
+.statements {
+  border: 2px solid #FFB600;
+  border-radius: 5px;
+  margin: 25px;
+  padding: 0 25px 25px 25px;
+  background-color: rgba(255, 182, 0, 0.15); }
 
-.status-source__image {
-  padding-right: 1rem;
-  width: 75px; }
-  @media only screen and (min-width: 768px) {
-    .status-source__image {
-      padding-right: 2rem;
-      width: 120px; } }
+.statements__content {
+  margin-bottom: 3em; }
+  .statements__content table {
+    border-collapse: collapse; }
 
-.status-source-status--open {
-  text-transform: uppercase;
-  color: darkgreen;
-  font-size: 1.25rem;
-  font-weight: 600; }
+.statement {
+  line-height: 1.5em;
+  border-left: 1px solid #ABB0B2;
+  border-right: 1px solid #ABB0B2; }
+  .statement:first-child {
+    border: 1px solid #ABB0B2;
+    background-color: rgba(236, 236, 236, 0.8); }
+  .statement th, .statement td {
+    padding: 10px 25px 10px 10px;
+    border-bottom: 1px solid #ABB0B2;
+    text-align: left;
+    vertical-align: top; }
 
-.status-source-status--caution {
-  text-transform: uppercase;
-  color: #FFB600;
-  font-size: 1.25rem;
-  font-weight: 600; }
+.table-header {
+  font-weight: 700; }
 
-.status-source-status--closed {
-  text-transform: uppercase;
-  color: red;
-  font-size: 1.25rem;
-  font-weight: 600; }
-
-.status-source-status--error {
-  text-transform: uppercase;
-  font-size: 1.25rem;
-  font-weight: 600; }
+.support {
+  text-align: center; }
 
 .subscribe {
   border: 2px solid #02A7F1;
@@ -622,12 +618,6 @@ section {
   .subscribe__coming-soon {
     color: #02A7F1;
     font-size: 1rem; }
-
-.announcements-box {
-  border: 2px solid #FFD700;
-  border-radius: 5px;
-  padding: 10px;
-  background-color: rgba(255, 215, 0, 0.15); }
 
 .footer {
   font-size: 0.875rem;
