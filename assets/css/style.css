@@ -588,7 +588,8 @@ section {
 .statements__content {
   margin-bottom: 3em; }
   .statements__content table {
-    border-collapse: collapse; }
+    border-collapse: collapse;
+    width: 100%; }
 
 .statement {
   line-height: 1.5em;
@@ -602,6 +603,9 @@ section {
     border-bottom: 1px solid #ABB0B2;
     text-align: left;
     vertical-align: top; }
+    @media only screen and (min-width: 320px) and (max-width: 767px) {
+      .statement th:nth-child(2), .statement td:nth-child(2) {
+        display: none; } }
 
 .table-header {
   font-weight: 700; }

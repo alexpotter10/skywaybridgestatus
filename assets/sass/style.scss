@@ -163,6 +163,7 @@ section {
 
     & table {
         border-collapse: collapse;
+        width: 100%;
     }
     
 }
@@ -181,6 +182,12 @@ section {
         border-bottom: 1px solid #ABB0B2;
         text-align: left;
         vertical-align: top;
+
+        &:nth-child(2) {
+            @include respond-to(mobile) {
+                display: none;
+            }
+        }
     }
 }
 .table-header {
