@@ -137,6 +137,15 @@ require 'fetch-planned-closures.php';
                     <label for="mce-PHONE">Mobile Phone Number</label>
                     <input type="text" value="" name="PHONE" class="" id="mce-PHONE">
                 </div>
+                <div class="mc-field-group">
+                    <label for="mce-MMERGE5">Notification Preference </label>
+                    <select name="MMERGE5" class="" id="mce-MMERGE5">
+                        <option value=""></option>
+                        <option value="Both Email and Text">Both Email and Text</option>
+                        <option value="Text Message (SMS) Only">Text Message (SMS) Only</option>
+                        <option value="Email Only">Email Only</option>
+                    </select>
+                </div>
                     <div id="mce-responses" class="clear">
                         <div class="response" id="mce-error-response" style="display:none"></div>
                         <div class="response" id="mce-success-response" style="display:none"></div>

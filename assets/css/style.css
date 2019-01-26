@@ -669,6 +669,12 @@ a:hover {
   -moz-border-radius: 3px;
   border-radius: 3px; }
 
+#mc_embed_signup select {
+  border: 1px solid #ABB0B2;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px; }
+
 #mc_embed_signup input[type=checkbox] {
   -webkit-appearance: checkbox; }
 
@@ -737,13 +743,15 @@ a:hover {
   display: block;
   width: 100%;
   padding: 8px 0;
-  text-indent: 2%; }
+  text-indent: 1%;
+  height: 2em; }
 
 #mc_embed_signup .mc-field-group select {
   display: inline-block;
-  width: 99%;
-  padding: 5px 0;
-  margin-bottom: 2px; }
+  width: 100%;
+  padding: 8px 0;
+  margin-bottom: 2px;
+  height: 2em; }
 
 #mc_embed_signup .datefield, #mc_embed_signup .phonefield-us {
   padding: 5px 0; }
