@@ -36,7 +36,7 @@
             <xmp><script src="https://www.skywaybridgestatus.com/widget/v1/sbs-widget.js"></script></xmp>
             <p>Next, insert the following div anywhere on your page where you would like the widget to appear.</p>
             <xmp><div id="sbs-widget"></div></xmp>
-            <p>You can then customize the display size and positioning by styling the div. Here's an example of a centered div with a maximum width of 600px.</p>
+            <p><b>Recommended:</b> You can then customize the display size and positioning by styling the div. Here's an example of a centered div with a maximum width of 600px.</p>
             <xmp><div id="sbs-widget" style="max-width:600px; margin: 0 auto; text-align:center;"></div></xmp>
             <p>That's it! You now have your status widget implemented on your website. 
             <p>&nbsp;</p>
