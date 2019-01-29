@@ -26,20 +26,25 @@ $conn = null;
 
 // Set global_status
 if (is_null($fl511_status)) {
-    $global_status_string = "unknown";
+    $global_status_string = "unknown – cannot fetch status";
     $global_status_modifier = "error";
+    $global_status_css_color = "#4A4A4A";
 } elseif ($fl511_status == 0) {
     $global_status_string = "closed";
     $global_status_modifier = "closed";
+    $global_status_css_color = "red";
 } elseif ($fl511_status == 10) {
     $global_status_string = "open";
     $global_status_modifier = "open";
+    $global_status_css_color = "darkgreen";
 } elseif (!empty($fl511_status)) {
     $global_status_string = "open with an advisory";
     $global_status_modifier = "caution";
+    $global_status_css_color = "#FFB600";
 } else {
-    $global_status_string = "unknown";
+    $global_status_string = "unknown – cannot fetch status";
     $global_status_modifier = "error";
+    $global_status_css_color = "#4A4A4A";
 } 
 
 // Set fl511_status

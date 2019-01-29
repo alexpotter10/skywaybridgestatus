@@ -1,8 +1,8 @@
 <?php 
 
-require 'fetch-status-data.php';
-require 'fetch-active-statements.php';
-require 'fetch-planned-closures.php';
+require 'data/fetch-status-data.php';
+require 'data/fetch-active-statements.php';
+require 'data/fetch-planned-closures.php';
 
 ?>
 
