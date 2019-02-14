@@ -1,0 +1,309 @@
+// Define Global Variables
+$break-mobile: 320px;
+$break-tablet: 768px;
+$break-desktop: 1024px;
+
+// Define Responsive Breakpoints Using Mixin
+@mixin respond-to($media) {
+    @if $media == small-mobile {
+        @media only screen and (max-width: $break-mobile -1) { @content; }
+    }
+    @else if $media == mobile {
+        @media only screen and (min-width: $break-mobile) and (max-width: $break-tablet - 1) { @content; }
+    }
+    @else if $media == tablet {
+        @media only screen and (min-width: $break-tablet) and (max-width: $break-desktop - 1) { @content; }
+    }
+    @else if $media == desktop {
+        @media only screen and (min-width: $break-desktop) { @content; }
+    }
+    // Not Mobile
+    @else if $media == tablet-or-greater {
+        @media only screen and (min-width: $break-tablet) { @content; }
+    }
+}
+
+// Import Other Stylesheets
+@import 'normalize';
+@import 'responsive';
+
+/* Font Definitions
+===================*/
+@font-face {
+    font-family: 'Libre Franklin';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Libre Franklin'), local('LibreFranklin-Regular'), url(/assets/fonts/libre-franklin.woff2) format('woff2'), url(https://fonts.gstatic.com/s/librefranklin/v2/jizDREVItHgc8qDIbSTKq4XkRiUf2zcZiVbJ.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+    font-family: 'Libre Franklin';
+    font-style: normal;
+    font-weight: 600;
+    src: local('Libre Franklin SemiBold'), local('LibreFranklin-SemiBold'), url(/assets/fonts/libre-franklin-semibold.woff2) format('woff2'), url(https://fonts.gstatic.com/s/librefranklin/v2/jizAREVItHgc8qDIbSTKq4XkRi3A_yI0q1vjitOh.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+
+@font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Roboto'), local('Roboto-Regular'), url(assets/fonts/roboto.woff2) format('woff2'), url(https://fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu4mxKKTU1Kg.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+
+/* Global
+===================*/
+html {
+    font-size: 16px;
+    color: #4A4A4A;
+}
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    line-height: 30px;
+    background-color: #F9FBFB;
+}
+h1 {
+    font-family: 'Libre Franklin', Arial, sans-serif;
+    font-size: 1.75rem;
+    line-height: 2.25rem;
+    @include respond-to(tablet-or-greater) {
+        font-size: 2.25rem;
+    }
+}
+h2 {
+    font-family: 'Libre Franklin', Arial, sans-serif;
+}
+p {
+    font-size: 16px;
+    color: #4A4A4A;
+}
+section {
+    padding-bottom: 2rem;
+}
+
+xmp {
+    font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
+    margin-bottom: 10px;
+    overflow: auto;
+    width: auto;
+    padding: 5px;
+    background-color: #eee;
+    max-height: 600px;
+}
+
+
+/* Layout
+===================*/
+.header {
+    background-color: #FFFFFF;
+    border-bottom: #979797 1px;
+    box-shadow: 0 4px 2px -2px rgba(0,0,0,0.5);
+    width: 100%;
+}
+.navbar {
+    position: relative;
+}
+#sbs-logo {
+    display: block;
+    height: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 90vw;
+    @include respond-to(tablet-or-greater) {
+        height: 50px;
+    }
+}
+.navbar__logo {
+    @include respond-to(tablet-or-greater) {
+        font-size: 1.5rem;
+    }
+}
+.navbar__navigation {
+    display: none;
+    text-align: right;
+    @include respond-to(tablet-or-greater) {
+        display: initial;
+    }
+}
+.status {
+    text-align: center;
+    padding: 1rem 0;
+    @include respond-to(tablet-or-greater) {
+        padding: 3rem 0;
+    }
+}
+.status--open {
+    text-transform: uppercase;
+    color: darkgreen;
+    font-size: 3rem;
+    line-height: 6rem;
+}
+.status--caution {
+    text-transform: uppercase;
+    color: #FFB600;
+    font-size: 2rem;
+    line-height: 2.75rem;
+
+    @include respond-to(tablet-or-greater) {
+        font-size: 3rem;
+        line-height: 6rem;
+    }
+}
+.status--closed {
+    text-transform: uppercase;
+    color: red;
+    font-size: 3rem;
+    line-height: 6rem;
+}
+.status--error {
+    text-transform: uppercase;
+    font-size: 3rem;
+    line-height: 6rem;
+}
+.status__data-refreshed {
+    font-size: 0.75rem;
+    line-height: 0.5rem;
+}
+.statements {
+    border: 2px solid #FFB600;
+    border-radius: 5px;
+    margin: 25px;
+    padding: 0 25px 25px 25px;
+    background-color: rgba(255,182,0,0.15);
+}
+.statements__content {
+    margin-bottom: 3em;
+
+    & table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+    
+}
+.statement {
+    line-height: 1.5em;
+    border-left: 1px solid #ABB0B2;
+    border-right: 1px solid #ABB0B2;
+
+    &:first-child {
+        border: 1px solid #ABB0B2;
+        background-color: rgba(236,236,236,0.8);
+    }
+
+    & th, td {
+        padding: 10px 25px 10px 10px;
+        border-bottom: 1px solid #ABB0B2;
+        text-align: left;
+        vertical-align: top;
+
+        &:nth-child(2) {
+            @include respond-to(mobile) {
+                display: none; // Hide location column
+            }
+        }
+
+        &:nth-child(4) {
+            @include respond-to(mobile) {
+                display: none; // Hide last fetched column
+            }
+        }
+    }
+}
+.table-header {
+    font-weight: 700;
+}
+.support {
+    text-align: center;
+}
+.subscribe {
+    border: 2px solid #02A7F1;
+    border-radius: 5px;
+    margin: 25px;
+    padding: 0 25px 25px 25px;
+    background-color: rgba(2,167,241,0.15);
+
+    &__coming-soon {
+        color: #02A7F1;
+        font-size: 1rem;
+    }
+}
+.footer {
+    font-size: 0.875rem;
+    line-height: 1rem;
+}
+.footer__social-icons {
+    font-size: 2rem;
+    padding-top: 20px;
+}
+
+/* Links
+===================*/
+a {
+    color: #4A4A4A;
+}
+a:hover { 
+    color: #000000;
+}
+
+/* Helpers
+===================*/
+.center {
+    margin: auto;
+    text-align: center;
+}
+
+/* MailChimp Form Embed Code - Classic - 12/17/2015 v10.7
+===================*/
+#mc_embed_signup{clear:left; border-top: 1px solid #ABB0B2; padding-top: 20px; }
+#mc_embed_signup form {display:block; position:relative; text-align:left;}
+#mc_embed_signup h2 {font-weight:bold; padding:0; margin:15px 0; font-size:1.4em;}
+#mc_embed_signup input {border: 1px solid #ABB0B2; -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px;}
+#mc_embed_signup select {border: 1px solid #ABB0B2; -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px;}
+#mc_embed_signup input[type=checkbox]{-webkit-appearance:checkbox;}
+#mc_embed_signup input[type=radio]{-webkit-appearance:radio;}
+#mc_embed_signup input:focus {border-color:#333;}
+#mc_embed_signup .button {clear:both; background-color: #02A7F1; border: 0 none; border-radius:4px; transition: all 0.23s ease-in-out 0s; color: #FFFFFF; cursor: pointer; display: inline-block; font-size:15px; font-weight: normal; height: 32px; line-height: 32px; margin: 10px 5px 10px 0; padding: 0 22px; text-align: center; text-decoration: none; vertical-align: top; white-space: nowrap; width: auto;
+
+    @include respond-to(tablet-or-greater) {
+        margin: 0 5px 10px 0;
+    }
+}
+#mc_embed_signup .button:hover {background-color:#777;}
+#mc_embed_signup .small-meta {font-size: 11px;}
+#mc_embed_signup .nowrap {white-space:nowrap;}
+
+#mc_embed_signup .mc-field-group {clear:left; position:relative; width:100%; padding-bottom:3%; min-height:50px;}
+#mc_embed_signup .size1of2 {clear:none; float:left; display:inline-block; width:46%; margin-right:4%;}
+* html #mc_embed_signup .size1of2 {margin-right:2%; /* Fix for IE6 double margins. */}
+#mc_embed_signup .mc-field-group label {display:block; margin-bottom:3px;}
+#mc_embed_signup .mc-field-group input {display:block; width:100%; padding:8px 0; text-indent:1%;height:2em;}
+#mc_embed_signup .mc-field-group select {display:inline-block; width:100%; padding:8px 0; margin-bottom:2px; height:2em;}
+
+#mc_embed_signup .datefield, #mc_embed_signup .phonefield-us{padding:5px 0;}
+#mc_embed_signup .datefield input, #mc_embed_signup .phonefield-us input{display:inline; width:60px; margin:0 2px; letter-spacing:1px; text-align:center; padding:5px 0 2px 0;}
+#mc_embed_signup .phonefield-us .phonearea input, #mc_embed_signup .phonefield-us .phonedetail1 input{width:40px;}
+#mc_embed_signup .datefield .monthfield input, #mc_embed_signup .datefield .dayfield input{width:30px;}
+#mc_embed_signup .datefield label, #mc_embed_signup .phonefield-us label{display:none;}
+
+#mc_embed_signup .indicates-required {text-align:right; font-size:11px;}
+#mc_embed_signup .asterisk {color:#e85c41; font-size:150%; font-weight:normal; position:relative; top:5px;}     
+#mc_embed_signup .clear {clear:both;}
+
+#mc_embed_signup .mc-field-group.input-group ul {margin:0; padding:5px 0; list-style:none;}
+#mc_embed_signup .mc-field-group.input-group ul li {display:block; padding:3px 0; margin:0;}
+#mc_embed_signup .mc-field-group.input-group label {display:inline;}
+#mc_embed_signup .mc-field-group.input-group input {display:inline; width:auto; border:none;}
+
+#mc_embed_signup div#mce-responses {float:left; top:-1.4em; padding:0em .5em 0em .5em; overflow:hidden; width:90%; margin: 0 5%; clear: both;}
+#mc_embed_signup div.response {margin:1em 0; padding:1em .5em .5em 0; font-weight:bold; float:left; top:-1.5em; z-index:1; width:80%;}
+#mc_embed_signup #mce-error-response {display:none;}
+#mc_embed_signup #mce-success-response {color:#529214; display:none;}
+#mc_embed_signup label.error {display:block; float:none; width:auto; margin-left:1.05em; text-align:left; padding:.5em 0;}
+
+#mc-embedded-subscribe {clear:both; width:auto; display:block; margin:1em 0 1em 5%;}
+#mc_embed_signup #num-subscribers {font-size:1.1em;}
+#mc_embed_signup #num-subscribers span {padding:.5em; border:1px solid #ccc; margin-right:.5em; font-weight:bold;}
+
+#mc_embed_signup #mc-embedded-subscribe-form div.mce_inline_error {display:inline-block; margin:2px 0 1em 0; padding:5px 10px; background-color:rgba(255,255,255,0.85); -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px; font-size:14px; font-weight:normal; z-index:1; color:#e85c41;}
+#mc_embed_signup #mc-embedded-subscribe-form input.mce_inline_error {border:2px solid #e85c41;}
