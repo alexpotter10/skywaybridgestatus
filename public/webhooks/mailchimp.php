@@ -14,7 +14,7 @@ require(ROOT . "vendor/autoload.php");
 use \DrewM\MailChimp\Webhook;
 
 // Check for security key
-if($_GET["access_key"] !== $mailchip_access_key) {
+if($_GET["access_key"] !== $mailchimp_access_key) {
     echo "<h1>Access denied</h1>";
     echo "<p>Contact the adminstrator for more info.</p>";
 } else {
