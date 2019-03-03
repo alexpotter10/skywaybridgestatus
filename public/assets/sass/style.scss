@@ -69,6 +69,7 @@ h1 {
     line-height: 2.25rem;
     @include respond-to(tablet-or-greater) {
         font-size: 2.25rem;
+        line-height: 3.25rem;
     }
 }
 h2 {
