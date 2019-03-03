@@ -43,7 +43,7 @@ catch(PDOException $e) {
 foreach ($parsed_json->{'features'} as $key ) {
     $location = $key->{'attributes'}->{'LOCATION'};
     // Is there an active Skyway notice?
-    if (preg_match('/(?=.*?\bSKYWAY\b).*/', $location)) {
+    if (preg_match('/(?=.*?\bSKYWAY\b)|(?=.*?\bSKWY\b).*/', $location)) {
         $incident_id = $key->{'attributes'}->{'INCIDENTID'};
         $object_id = $key->{'attributes'}->{'OBJECTID'};
         $dispatch_center = $key->{'attributes'}->{'DISPATCHCENTER'};
