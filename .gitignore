@@ -3,6 +3,7 @@ config.php
 status.json
 /vendor/
 node_modules/
+dev_notes/
 
 # Compiled source #
 ###################
