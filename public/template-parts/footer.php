@@ -5,7 +5,7 @@
         <div class="footer__social-icons">
             <a href="https://twitter.com/SkywayStatus" title="Skyway Bridge Status on Twitter" alt="Skyway Bridge Status Twitter link"><i class="fa fa-twitter-square" aria-hidden="true"></i></a>
             <a href="https://www.facebook.com/SkywayStatus/" title="Skyway Bridge Status on Facebook" alt="Skyway Bridge Status Facebook link"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
-            <a href="https://github.com/SkywayBridgeStatus" title="Skyway Bridge Status on GitHub" alt="Skyway Bridge Status GitHub link"><i class="fa fa-github-square" aria-hidden="true"></i></a>
+            <a href="https://github.com/iannerney/skywaybridgestatus" title="Skyway Bridge Status on GitHub" alt="Skyway Bridge Status GitHub link"><i class="fa fa-github-square" aria-hidden="true"></i></a>
         <div>    
     </div>
 </section>
