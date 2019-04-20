@@ -1,28 +1,45 @@
 <?php
-require dirname(__DIR__, 2) . '/config.php';
+// require dirname(__DIR__, 2) . '/config.php';
 require dirname(__DIR__, 2) . '/vendor/autoload.php';
 
 use Twilio\Rest\Client;
 
-function sendTextMessage($e164_phone_number, $message_string) {
-    // Your Account SID and Auth Token from twilio.com/console
-    $account_sid = $twilio_key;
-    // $auth_token = $twilio_live_auth_token;
-    // In production, these should be environment variables. E.g.:
-    // $auth_token = $_ENV["TWILIO_ACCOUNT_SID"]
+function sendStatusUpdateAllSubscribers($message_string) {
+    
+    echo $message_string;
 
-    // A Twilio number you own with SMS capabilities
-    $twilio_number = "+17273000620";
+    // Pull list of current SMS subscriber phone numbers
+    require dirname(__DIR__, 2) . '/config.php';
+    $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $stmt = $conn->prepare("SELECT DISTINCT data_e164_phone FROM mailchimp_subscribers WHERE data_preference != 'Email Only' AND data_e164_phone != '';"); 
+    $stmt->execute();
+    $subscribers = $stmt->fetchAll(PDO::FETCH_COLUMN); // return one dimensional array
+    $conn = null;
 
-    $client = new Client($account_sid, $auth_token);
-    $client->messages->create(
-        // Where to send a text message (your cell phone?)
-        $e164_phone_number,
-        array(
-            'from' => $twilio_number,
-            'body' => $message_string
-        )
-    );
+    // Set Twilio requried variables
+    $twilio_number = $twilio_sms_number;
+    $account_sid = $twilio_account_id;
+    $auth_token = $twilio_live_auth_token;
+    
+    // DEFENSIVE CODE: Overwrite subscribers array in non-production environments
+    if ($environment != "production") {
+        $subscribers = array($twilio_test_phone);
+    }
+
+    // Loop through subscriber numbers and send status update
+    foreach ($subscribers as $subscriber) {
+        $client = new Client($account_sid, $auth_token);
+        $client->messages->create(
+            $subscriber,
+            array(
+                'from' => $twilio_number,
+                'body' => $message_string
+            )
+        );
+        echo $subscriber;
+    }
+
 }
 
 ?>
