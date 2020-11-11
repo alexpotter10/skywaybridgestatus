@@ -11,7 +11,7 @@ require 'data/fetch-planned-closures.php';
 <head>
     <title>Skyway Bridge Status | Is the Sunshine Skyway Bridge open?</title>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="Keywords" content="sunshine skyway bridge, sunshine skyway bridge, skyway bridge, skyway bridge status, skyway bridge closure, sunshine skyway, skyway bridge closed, is the skyway bridge closed, sunshine skyway bridge closure, sunshine skyway bridge closed, skyway bridge open or closed, skyway bridge news, skyway bridge traffic, skyway bridge crash, sunshine skyway bridge open">
     <meta name="Description" content="Want to know if the Sunshine Skyway Bridge is open or closed? You've come to the right place! We pull and report the Skyway Bridge status every 5 minutes.">
     <link rel="canonical" href="https://www.skywaybridgestatus.com" />
@@ -30,6 +30,61 @@ require 'data/fetch-planned-closures.php';
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
     <?php include 'template-parts/tracking.php';?>
+    <!-- Windy -->
+    <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"></script>
+    <script src="https://api.windy.com/assets/map-forecast/libBoot.js"></script>
+    <style>
+        #windy {
+            width: 100%;
+            height: 400px;
+        }
+    </style>
+    <script>
+        const options = {
+            // Required: API key
+            key: 'jOQsXXf5Pz7rqQi8cE2UeQhpItGbZnuw', // REPLACE WITH YOUR KEY !!!
+
+            // Put additional console output
+            verbose: true,
+
+            // Optional: Initial state of the map
+            lat: 27.63792482354555,
+            lon: -82.57255017757416,
+            zoom: 10,
+        };
+
+        // Initialize Windy API
+        windyInit(options, windyAPI => {
+            const { picker, utils, broadcast } = windyAPI;
+
+            picker.on('pickerOpened', latLon => {
+                // picker has been opened at latLon coords
+                console.log(latLon);
+
+                const { lat, lon, values, overlay } = picker.getParams();
+                // -> 48.4, 14.3, [ U,V, ], 'wind'
+                console.log(lat, lon, values, overlay);
+
+                const windObject = utils.wind2obj(values);
+                console.log(windObject);
+            });
+
+            picker.on('pickerMoved', latLon => {
+                // picker was dragged by user to latLon coords
+                console.log(latLon);
+            });
+
+            picker.on('pickerClosed', () => {
+                // picker was closed
+            });
+
+            // Wait since wather is rendered
+            broadcast.once('redrawFinished', () => {
+                picker.open({ lat: 27.617597261866695, lon: -82.6531183719635 });
+                // Opening of a picker (async)
+            });
+        });
+    </script>
 </head>
 <body>
 
@@ -100,6 +155,8 @@ require 'data/fetch-planned-closures.php';
             </div>
             <?php endforeach; ?>
 
+            <div id="windy"></div>
+
         </section>
 
         <?php
@@ -120,7 +177,7 @@ require 'data/fetch-planned-closures.php';
         <section class="subscribe row">
             <div class="subscribe__content">
                 <h2><span class="subscribe__coming-soon">Coming Soon! </span><br/>Notifications by Text and Email</h2>
-                <p>I've had many requests to provide status notifications by text and email, and I'm happy to say I should have this feature live in February. If you'd like to have early access to this new feature, please input your email below, and I'll let you know when it's ready! <br/><br/>Thanks for using Skyway Bridge Status! <br/>&mdash; Ian</p>
+                <p>I've had many requests to provide status notifications by text and email, and I'm working on making that happen. If you'd like to have early access to this new feature, please input your email below, and I'll let you know when it's ready! <br/><br/>Thanks for using Skyway Bridge Status! <br/>&mdash; Ian</p>
                 <!-- Begin Mailchimp Signup Form -->
                 <div id="mc_embed_signup">
                 <form action="https://skywaybridgestatus.us7.list-manage.com/subscribe/post?u=f0159a3cfad26bb6d5c07f288&amp;id=b3f668b8e6" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
