@@ -34,7 +34,9 @@ if (empty($fl511)) {
     $fl511_status = 1; //closed Northbound
 } elseif (preg_match('/(?=.*?\bSunshine\b)(?=.*?\bSkyway\b)(?=.*?\bclosed Southbound\b).*/', $fl511)) {
     $fl511_status = 2; //closed Southbound
-} elseif (preg_match('/(?=.*?\bSunshine\b)(?=.*?\bSkyway\b)(?=.*?\bclosed\b).*/', $fl511)) {
+} elseif (preg_match('/(?i)(?=.*?\bSunshine\b)(?=.*?\bSkyway\b)(?=.*?\bclosed\b).*/', $fl511)) {
+    $fl511_status = 0; //closed
+} elseif (preg_match('/(?i)(?=.*?\bSkyway\b)(?=.*?\bBridge\b)(?=.*?\bclosed\b).*/', $fl511)) {
     $fl511_status = 0; //closed
 } elseif (preg_match('/(?=.*?\bSunshine\b)(?=.*?\bSkyway\b)(?=.*?\bcaution\b)(?=.*?\brain\b).*/', $fl511)) {
     $fl511_status = 3; //caution for rain

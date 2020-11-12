@@ -43,7 +43,7 @@ require 'data/fetch-planned-closures.php';
                 <h1>The Sunshine Skyway Bridge is currently 
                 <br/>
                 <span class="status--<?php echo $global_status_modifier;?>"><?php echo $global_status_string;?></span></h1>
-                <p><a href="." onclick="ga('send', 'event', 'Status Refresh', 'Link Click', 'Homepage Refresh');">Refresh this page</a> for the latest data. We update our status every 5 minutes.</p>
+                <p><a href="." onclick="ga('send', 'event', 'Status Refresh', 'Link Click', 'Homepage Refresh');">Refresh this page</a> for the latest data. <br/>We update our main status every 5 minutes from <a href="https://fl511.com/List/Alerts">FL511</a>.</p>
                 <p class="status__data-refreshed">(Status last updated: <?php echo date_format($fetch_datetime,'F jS, Y \a\t g:ia');?>)</p>
             </div>
         </section>
@@ -100,7 +100,7 @@ require 'data/fetch-planned-closures.php';
             </div>
             <?php endforeach; ?>
 
-            <iframe width="100%" height="400" src="https://embed.windy.com/embed2.html?lat=27.613&lon=-82.652&detailLat=26.554&detailLon=-81.902&width=1036&height=400&zoom=10&level=surface&overlay=wind&product=ecmwf&menu=&message=true&marker=true&calendar=12&pressure=&type=map&location=coordinates&detail=&metricWind=mph&metricTemp=%C2%B0F&radarRange=-1" frameborder="0"></iframe>
+            <iframe width="100%" height="400" src="https://embed.windy.com/embed2.html?lat=27.613&lon=-82.652&detailLat=26.554&detailLon=-81.902&width=1036&height=400&zoom=10&level=surface&overlay=wind&product=ecmwf&menu=&message=true&marker=true&calendar=&pressure=&type=map&location=coordinates&detail=&metricWind=mph&metricTemp=%C2%B0F&radarRange=-1" frameborder="0"></iframe>
 
         </section>
 
