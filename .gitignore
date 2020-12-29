@@ -4,6 +4,7 @@ status.json
 /vendor/
 node_modules/
 dev_notes/
+sendgrid.env
 
 # Compiled source #
 ###################
